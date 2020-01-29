@@ -19,14 +19,13 @@ const store = createStore(rootrReducer)
 
 let app = null
 
-firebase.auth().onAuthStateChanged((e)=>{
-
+firebase.auth().onAuthStateChanged((user)=>{
     // Initialize app when app is not created yet
     if(!app){
         app = ReactDOM.render(
             <Provider store={store}>
                 <BrowserRouter>
-                    <App />
+                    <App userData={user}/>
                 </BrowserRouter>
             </Provider>, document.getElementById('root')
         );

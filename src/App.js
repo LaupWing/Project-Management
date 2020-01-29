@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Route, Switch} from 'react-router-dom'
 import Auth from './containers/Auth/Auth'
 import Overview from './containers/Overview/Overview'
+import {connect} from 'react-redux'
 
 class App extends Component {
     render(){
@@ -19,4 +20,11 @@ class App extends Component {
     }
 }
 
-export default App;
+const mapStateToProps = state =>{
+    return{
+        user: state.user.user,
+        auth: state.user.auth,
+    }
+}
+
+export default connect(mapStateToProps)(App);
