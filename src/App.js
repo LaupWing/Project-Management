@@ -6,6 +6,11 @@ import {connect} from 'react-redux'
 import * as actions from './store/actions/index'
 
 class App extends Component {
+
+    componentDidMount(){
+        this.props.setUser(this.props.user)
+    }
+
     render(){
         let routes =(
             <Switch>
@@ -15,6 +20,7 @@ class App extends Component {
         )
         return (
             <div className="App">
+                {this.props.user === null ? <Redirect to='/auth'/>:null}
                 {routes}       
             </div>
         )
