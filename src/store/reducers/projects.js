@@ -1,6 +1,11 @@
+
 const initialState ={
     projects: []
 }
+
+
+
+
 
 const reducer = (state=initialState, action)=>{
     switch(action.type){
