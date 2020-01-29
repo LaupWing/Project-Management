@@ -8,7 +8,7 @@ class App extends Component {
         let routes =(
             <Switch>
                 <Route path='/auth' component={Auth}/>
-                <Route path='/' component={Overview}/>
+                <Route exact path='/' component={Overview}/>
             </Switch>
         )
         return (
