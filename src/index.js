@@ -6,15 +6,33 @@ import * as serviceWorker from './serviceWorker';
 import {createStore, combineReducers} from 'redux'
 import {Provider} from 'react-redux'
 import user from './store/reducers/user'
+import './initFirebase'
 import projects from './store/reducers/projects'
+import firebase from 'firebase'
+import {BrowserRouter} from 'react-router-dom'
 
-const rootrReducer = combineReducers(user,projects)
+const rootrReducer = combineReducers({
+    user,
+    projects
+})
+const store = createStore(rootrReducer)
 
-ReactDOM.render(
-    <Provider store={rootrReducer}>
-        <App />
-    </Provider>, document.getElementById('root')
-);
+let app = null
+
+firebase.auth().onAuthStateChanged((e)=>{
+
+    // Initialize app when app is not created yet
+    if(!app){
+        app = ReactDOM.render(
+            <Provider store={store}>
+                <BrowserRouter>
+                    <App />
+                </BrowserRouter>
+            </Provider>, document.getElementById('root')
+        );
+    }
+})
+
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
