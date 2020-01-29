@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import {Route, Switch} from 'react-router-dom'
+import {Route, Switch, Redirect} from 'react-router-dom'
 import Auth from './containers/Auth/Auth'
 import Overview from './containers/Overview/Overview'
 import {connect} from 'react-redux'
+import * as actions from './store/actions/index'
 
 class App extends Component {
     render(){
@@ -27,4 +28,10 @@ const mapStateToProps = state =>{
     }
 }
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = dispatch =>{
+    return {
+        setUser: () => dispatch(actions.setUser())
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

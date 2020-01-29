@@ -6,5 +6,3 @@ export const setUser = (user) =>{
         user
     }
 }
-
-export const authInit 

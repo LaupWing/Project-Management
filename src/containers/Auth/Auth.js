@@ -1,9 +1,14 @@
 import React from 'react'
+import Login from './Login/Login'
+import Signup from './Signup/Signup'
 
 class Auth extends React.Component{
     render(){
         return(
-            <div></div>
+            <div>
+                <Login/>
+                <Signup/>
+            </div>
         )
     }
 }
