@@ -1,5 +1,6 @@
 *{
     --base-color: #252A41;
+    --lighter-base-color: #3B3F54;
     --contrast-color: white;
     --higlight-color: #eee;
     --button-color: #894EC8;
@@ -14,8 +15,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App{
+    width: 100vw;
+    height: 100vh;
+    background: var(--base-color);
+    display: flex;
+    justify-content: center;
 }
