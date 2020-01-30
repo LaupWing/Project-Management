@@ -3,6 +3,7 @@
     flex-direction: column;
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 .Auth nav{
     display: flex;
@@ -23,6 +24,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: var(--contrast-color);
 }
 
 .Auth form input{
@@ -35,6 +37,7 @@
 
 .left-enter{
     animation: leftFade 1s forwards;
+    z-index: 10;
 }
 .left-exit{
     animation: leftFade 1s forwards reverse;
@@ -52,6 +55,7 @@
 }
 .right-enter{
     animation: rightFade 1s forwards;
+    z-index: 10;
 }
 .right-exit{
     animation: rightFade 1s forwards reverse;

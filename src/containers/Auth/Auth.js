@@ -42,6 +42,7 @@ class Auth extends React.Component{
                         in={this.state.type === 'login' }
                         timeout={1000}
                         classNames={{
+                            enterDone: 'done',
                             enter: '',
                             enterActive: classes["left-enter"],
                             exitActive: classes["left-exit"],
@@ -56,6 +57,7 @@ class Auth extends React.Component{
                         in={this.state.type !== 'login' }
                         timeout={1000}
                         classNames={{
+                            enterDone: 'done',
                             enter: '',
                             enterActive: classes["right-enter"],
                             exitActive: classes["right-exit"],
