@@ -22,3 +22,24 @@ body {
     display: flex;
     justify-content: center;
 }
+.App > main{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    max-width: 1500px;
+}
+
+.App > main > section{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 95vh;
+}
+
+.App > main > section.white-section{
+    background: var(--contrast-color);
+    border-radius: 20px;
+}

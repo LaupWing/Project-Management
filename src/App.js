@@ -6,9 +6,17 @@ import {connect} from 'react-redux'
 import * as actions from './store/actions/index'
 
 class App extends Component {
+    state={
+        sectionHeight: null
+    }
 
     componentDidMount(){
         this.props.setUser(this.props.user)
+        const sectionWidth = document.querySelector('section.white-section').offsetWidth
+        console.log()
+        this.setState({
+            sectionHeight: sectionWidth * 1.5
+        })
     }
 
     render(){
@@ -22,7 +30,18 @@ class App extends Component {
         return (
             <div className="App">
                 {this.props.user === null ? <Redirect to='/auth'/>:null}
-                {routes}
+                <main>
+                    <section className='white-section' style={{
+                        height: `${this.state.sectionHeight}px`
+                    }}>
+                        {routes}
+                    </section>
+                    <section className='transparent-section' style={{
+                        height: `${this.state.sectionHeight}px`
+                    }}>
+
+                    </section>
+                </main>
             </div>
         )
     }
