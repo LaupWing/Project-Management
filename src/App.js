@@ -15,13 +15,14 @@ class App extends Component {
         let routes =(
             <Switch>
                 <Route path='/auth' component={Auth}/>
+                <Route path='/auth' component={Overview}/>
                 <Route exact path='/' component={Overview}/>
             </Switch>
         )
         return (
             <div className="App">
                 {this.props.user === null ? <Redirect to='/auth'/>:null}
-                {routes}       
+                {routes}
             </div>
         )
     }
