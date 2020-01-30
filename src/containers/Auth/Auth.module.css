@@ -11,8 +11,15 @@
     margin-bottom: 50px;
     margin-top: 35%;
 }
+.Auth main{
+    position: relative;
+}
 
 .Auth form{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,20 +33,37 @@
     border-radius: 10px;
 }
 
-.left-fade{
-    animation: forwards left 1s reverse;
-}
 .left-enter{
-    animation: 1s left forwards;
+    animation: leftFade 1s forwards;
+}
+.left-exit{
+    animation: leftFade 1s forwards reverse;
 }
 
-@keyframes left{
-    from{
-        transform: translate(0,0);
-        opacity: 1;
-    }
-    to{
-        transform: translate(-100%,0);
+@keyframes leftFade {
+    from {
         opacity: 0;
+        transform: translateX(-20%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.right-enter{
+    animation: rightFade 1s forwards;
+}
+.right-exit{
+    animation: rightFade 1s forwards reverse;
+}
+
+@keyframes rightFade {
+    from {
+        opacity: 0;
+        transform: translateX(20%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
     }
 }

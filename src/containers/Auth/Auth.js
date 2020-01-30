@@ -35,22 +35,36 @@ class Auth extends React.Component{
                         Signup
                     </Button>
                 </nav>
-                <CSSTransition
-                    in={this.state.type === 'login' }
-                    timeout={1000}
-                    classNames={{
-                        enter: '',
-                        enterActive: classes["left-fade"],
-                        exitActive: classes["left-enter"],
-                        exit: '',
-                    }}
-                >
-                    <Login/>
-                </CSSTransition>
-                {/* {   this.state.type === 'login' 
-                    ? <Login/>
-                    : <Signup/>
-                } */}
+                <main>
+                    <CSSTransition
+                        mountOnEnter 
+                        unmountOnExit
+                        in={this.state.type === 'login' }
+                        timeout={1000}
+                        classNames={{
+                            enter: '',
+                            enterActive: classes["left-enter"],
+                            exitActive: classes["left-exit"],
+                            exit: '',
+                        }}
+                    >
+                        <Login/>
+                    </CSSTransition>
+                    <CSSTransition
+                        mountOnEnter 
+                        unmountOnExit
+                        in={this.state.type !== 'login' }
+                        timeout={1000}
+                        classNames={{
+                            enter: '',
+                            enterActive: classes["right-enter"],
+                            exitActive: classes["right-exit"],
+                            exit: '',
+                        }}
+                    >
+                        <Signup/>
+                    </CSSTransition>
+                </main>
             </div>
         )
     }
