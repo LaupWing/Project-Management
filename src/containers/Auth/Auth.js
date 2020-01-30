@@ -34,8 +34,10 @@ class Auth extends React.Component{
                         Signup
                     </Button>
                 </nav>
-                <Login/>
-                <Signup/>
+                {   this.state.type === 'login' 
+                    ? <Login/>
+                    : <Signup/>
+                }
             </div>
         )
     }

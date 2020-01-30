@@ -1,6 +1,6 @@
 .Button{
     background: var(--button-color);
-    color: var(--higlight-color);
+    color: var(--contrast-color);
     padding: 5px 10px;
     text-transform: uppercase;
     cursor: pointer;
@@ -20,5 +20,5 @@
 }
 .active{
     background: var(--button-color);
-    color: var(--higlight-color);
+    color: var(--contrast-color);
 }
