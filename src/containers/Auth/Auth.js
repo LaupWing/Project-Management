@@ -3,6 +3,7 @@ import Login from './Login/Login'
 import Signup from './Signup/Signup'
 import classes from './Auth.module.css'
 import Button from '../../components/UI/Button/Button'
+import CSSTransition from 'react-transition-group/CSSTransition'
 
 class Auth extends React.Component{
     state={
@@ -34,10 +35,22 @@ class Auth extends React.Component{
                         Signup
                     </Button>
                 </nav>
-                {   this.state.type === 'login' 
+                <CSSTransition
+                    in={this.state.type === 'login' }
+                    timeout={1000}
+                    classNames={{
+                        enter: '',
+                        enterActive: classes["left-fade"],
+                        exitActive: classes["left-enter"],
+                        exit: '',
+                    }}
+                >
+                    <Login/>
+                </CSSTransition>
+                {/* {   this.state.type === 'login' 
                     ? <Login/>
                     : <Signup/>
-                }
+                } */}
             </div>
         )
     }
