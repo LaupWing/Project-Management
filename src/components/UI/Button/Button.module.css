@@ -1,0 +1,11 @@
+.Button{
+    background: var(--button-color);
+    color: var(--higlight-color);
+    padding: 5px 10px;
+}
+.switch-auth{
+    width: 100px;
+}
+.switch-auth:first-of-type{
+    border-radius: 50px 0 0 50px;
+}
