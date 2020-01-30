@@ -5,12 +5,33 @@ import classes from './Auth.module.css'
 import Button from '../../components/UI/Button/Button'
 
 class Auth extends React.Component{
+    state={
+        type: 'login'
+    }
+    checkAuthType(name){
+        return this.state.type === name ? ['switch-auth', 'active'] : ['switch-auth']
+    }
+    toggleType(){
+
+        this.setState({
+            type: this.state.type === 'login' ? 'signup' : 'login'
+        })
+    }
     render(){
         return(
             <div className={classes.Auth}>
                 <nav>
-                    <Button classes={'switch-auth'}>
+                    <Button 
+                        clicked={this.toggleType.bind(this)} 
+                        classes={this.checkAuthType('login')}
+                    >
                         Login
+                    </Button>
+                    <Button 
+                        clicked={this.toggleType.bind(this)} 
+                        classes={this.checkAuthType('signup')}
+                    >
+                        Signup
                     </Button>
                 </nav>
                 <Login/>

@@ -2,10 +2,23 @@
     background: var(--button-color);
     color: var(--higlight-color);
     padding: 5px 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all .25s ease-in;
 }
 .switch-auth{
     width: 100px;
+    background: transparent;
+    color: var(--button-color);
+    border: 2px var(--button-color) solid;
 }
 .switch-auth:first-of-type{
     border-radius: 50px 0 0 50px;
+}
+.switch-auth:last-of-type{
+    border-radius: 0 50px 50px 0;
+}
+.active{
+    background: var(--button-color);
+    color: var(--higlight-color);
 }
