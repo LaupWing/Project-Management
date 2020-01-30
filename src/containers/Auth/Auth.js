@@ -7,6 +7,8 @@ class Auth extends React.Component{
     render(){
         return(
             <div className={classes.Auth}>
+                <nav>
+                </nav>
                 <Login/>
                 <Signup/>
             </div>

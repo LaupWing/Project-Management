@@ -6,6 +6,7 @@
     --button-color: #894EC8;
     --succes-color: #3FD6D5;
     --pending-color: #ECEEF0;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 body {
   margin: 0;
@@ -15,31 +16,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.App{
-    width: 100vw;
-    height: 100vh;
-    background: var(--base-color);
-    display: flex;
-    justify-content: center;
-}
-.App > main{
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    max-width: 1500px;
-}
-
-.App > main > section{
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-height: 95vh;
-}
-
-.App > main > section.white-section{
-    background: var(--contrast-color);
-    border-radius: 20px;
+input {
+    outline: none;
 }

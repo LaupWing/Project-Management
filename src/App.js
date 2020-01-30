@@ -4,6 +4,7 @@ import Auth from './containers/Auth/Auth'
 import Overview from './containers/Overview/Overview'
 import {connect} from 'react-redux'
 import * as actions from './store/actions/index'
+import classes from './App.module.css'
 
 class App extends Component {
     state={
@@ -12,8 +13,7 @@ class App extends Component {
 
     componentDidMount(){
         this.props.setUser(this.props.user)
-        const sectionWidth = document.querySelector('section.white-section').offsetWidth
-        console.log()
+        const sectionWidth = document.querySelector('section').offsetWidth
         this.setState({
             sectionHeight: sectionWidth * 1.5
         })
@@ -28,18 +28,18 @@ class App extends Component {
             </Switch>
         )
         return (
-            <div className="App">
+            <div className={classes.App}>
                 {this.props.user === null ? <Redirect to='/auth'/>:null}
                 <main>
-                    <section className='white-section' style={{
+                    <section className={classes['white-section']} style={{
                         height: `${this.state.sectionHeight}px`
                     }}>
                         {routes}
                     </section>
-                    <section className='transparent-section' style={{
+                    <section className={classes['transparent-section']} style={{
                         height: `${this.state.sectionHeight}px`
                     }}>
-
+                        <h2>Project Management</h2>
                     </section>
                 </main>
             </div>
