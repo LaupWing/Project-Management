@@ -5,7 +5,7 @@ import classes from './Auth.module.css'
 import Button from '../../components/UI/Button/Button'
 import CSSTransition from 'react-transition-group/CSSTransition'
 import {connect} from 'react-redux'
-import * as actions from '../../store/actions/auth'
+import * as actions from '../../store/actions/index'
 
 class Auth extends React.Component{
     state={
@@ -19,7 +19,7 @@ class Auth extends React.Component{
         return this.state.type === name ? ['switch-auth', 'active'] : ['switch-auth']
     }
     toggleType(){
-
+        this.props.setError(null)
         this.setState({
             type: this.state.type === 'login' ? 'signup' : 'login'
         })
@@ -85,7 +85,8 @@ class Auth extends React.Component{
 
 const mapDispatchToProps = dispatch =>{
     return {
-        login: (email, password) => dispatch(actions.authLogin(email, password))
+        login: (email, password) => dispatch(actions.authLogin(email, password)),
+        setError: (error) => dispatch(actions.authError(error))
     }
 }
 

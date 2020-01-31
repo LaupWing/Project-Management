@@ -51,6 +51,10 @@
     border: var(--highlight-color) 1px solid;
 }
 
+.Auth p{
+    color: var(--warning-color);
+}
+
 .left-enter{
     animation: leftFade 1s forwards;
     z-index: 10;

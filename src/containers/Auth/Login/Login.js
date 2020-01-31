@@ -11,7 +11,7 @@ const mapStateToProps = state =>{
 export default connect(mapStateToProps)((props) =>{
     const [emailState, setEmailState] = React.useState('')
     const [passwordState, setPasswordState] = React.useState('')
-    console.log(props)
+    
     return (
         <form 
             onSubmit={(e)=>{
@@ -37,7 +37,7 @@ export default connect(mapStateToProps)((props) =>{
                 }}
             ></input>
             {props.error 
-            ? <p>{props.error}</p>
+            ? <p className='warning'>{props.error}</p>
             : null}
             <Button>
                 Login

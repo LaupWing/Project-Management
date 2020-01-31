@@ -5,6 +5,7 @@
     --highlight-color: rgba(0, 0, 0, 0.15);
     --button-color: #894EC8;
     --succes-color: #3FD6D5;
+    --warning-color: red;
     --pending-color: #ECEEF0;
     font-family: 'Source Sans Pro', sans-serif;
 }
