@@ -15,6 +15,12 @@ class Auth extends React.Component{
     onLogin(email,password){
         this.props.login(email,password)
     }
+    onSignup(email,password, confirmPassword){
+        if(password!== confirmPassword){
+            return this.props.setError({message:'Passwords has to be equal'})
+        }
+        this.props.signUp(email,password)
+    }
     checkAuthType(name){
         return this.state.type === name ? ['switch-auth', 'active'] : ['switch-auth']
     }
@@ -74,7 +80,7 @@ class Auth extends React.Component{
                         }}
                     >
                         <Signup 
-                            submitted={this.onLogin.bind(this)}
+                            submitted={this.onSignup.bind(this)}
                         />
                     </CSSTransition>
                 </main>
@@ -86,7 +92,8 @@ class Auth extends React.Component{
 const mapDispatchToProps = dispatch =>{
     return {
         login: (email, password) => dispatch(actions.authLogin(email, password)),
-        setError: (error) => dispatch(actions.authError(error))
+        setError: (error) => dispatch(actions.authError(error)),
+        signUp: (email,password) => dispatch(actions.authSignup(email,password))
     }
 }
 
