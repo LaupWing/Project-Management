@@ -5,10 +5,27 @@ import Overview from './containers/Overview/Overview'
 import {connect} from 'react-redux'
 import * as actions from './store/actions/index'
 import classes from './App.module.css'
+import Dots from './components/BackgroundEl/Dots/Dots'
 
 class App extends Component {
     state={
-        sectionHeight: null
+        sectionHeight: null,
+        bgItems:[
+            {
+                type: 'Dots',
+                styles:{
+                    bottom: '2vh',
+                    left: '2vw',
+                }
+            },
+            {
+                type: 'Dots',
+                styles:{
+                    top: '2vh',
+                    right: '2vw',
+                }
+            },
+        ]
     }
 
     componentDidMount(){
@@ -27,6 +44,16 @@ class App extends Component {
                 <Route exact path='/' component={Overview}/>
             </Switch>
         )
+        const components ={
+            Dots
+        }
+
+        const bgItems = this.state.bgItems.map((item,i)=>{
+            const BgCmp = components[item.type]
+            return (
+                <BgCmp key={i} styles={item.styles}></BgCmp>
+            )
+        })
         return (
             <div className={classes.App}>
                 {this.props.user === null ? <Redirect to='/auth'/>:null}
@@ -42,6 +69,7 @@ class App extends Component {
                         <h2>Project Management</h2>
                     </section>
                 </main>
+                {bgItems}
             </div>
         )
     }

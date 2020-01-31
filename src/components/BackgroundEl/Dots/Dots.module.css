@@ -1,3 +1,9 @@
+.Dots{
+    position: fixed;
+    width: 25vw;
+    opacity: .05;
+    max-width: 500px;
+}
 .Dots circle{
     fill:#fff;
 }
