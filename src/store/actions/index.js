@@ -2,5 +2,6 @@ export{
     setUser,
     authError,
     authLogin,
-    authSignup
+    authSignup,
+    fetchUserData
 }from './auth'

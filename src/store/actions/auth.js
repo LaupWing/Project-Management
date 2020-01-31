@@ -30,6 +30,14 @@ export const authSignup = (email, password)=>{
 
 export const fetchUserData = (id)=>{
     return{
+        type: actionTypes.FETCH_USERDATA_SAGA,
+        id
+    }
+}
 
+export const setUserData = (data) =>{
+    return {
+        type: actionTypes.SET_USER_DATA,
+        data
     }
 }
