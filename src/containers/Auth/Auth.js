@@ -4,6 +4,8 @@ import Signup from './Signup/Signup'
 import classes from './Auth.module.css'
 import Button from '../../components/UI/Button/Button'
 import CSSTransition from 'react-transition-group/CSSTransition'
+import {connect} from 'react-redux'
+import * as actions from '../../store/actions/auth'
 
 class Auth extends React.Component{
     state={

@@ -13,3 +13,9 @@ export const authError = (error)=>(
         error
     }
 )
+export const authLogin = (error)=>(
+    {
+        type: actionTypes.AUTH_SAGA_LOGIN,
+        error
+    }
+)

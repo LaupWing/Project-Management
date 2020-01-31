@@ -6,5 +6,5 @@ import {
 }from './parts/auth'
 
 export function* watchAuth(){
-    yield takeEvery(actionTypes.AUTH_USER_LOGIN, loginSaga)
+    yield takeEvery(actionTypes.AUTH_SAGA_LOGIN, loginSaga)
 }
