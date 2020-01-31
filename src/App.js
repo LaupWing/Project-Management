@@ -33,6 +33,9 @@ class App extends Component {
     componentDidMount(){
         firebase.auth().onAuthStateChanged(user=>{
             this.props.setUser(user)
+            if(user){
+                this.props.onUserDataFetch(user.uid)
+            }
         })
         const sectionWidth = document.querySelector('section').offsetWidth
         this.setState({
@@ -103,7 +106,8 @@ const mapStateToProps = state =>{
 
 const mapDispatchToProps = dispatch =>{
     return {
-        setUser: (user) => dispatch(actions.setUser(user))
+        setUser: (user) => dispatch(actions.setUser(user)),
+        onUserDataFetch: (id) => dispatch(actions.fetchUserData(id))
     }
 }
 

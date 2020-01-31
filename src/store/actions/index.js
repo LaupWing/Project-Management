@@ -3,5 +3,6 @@ export{
     authError,
     authLogin,
     authSignup,
-    fetchUserData
+    fetchUserData,
+    setUserData
 }from './auth'
