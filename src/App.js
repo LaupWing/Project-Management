@@ -2,11 +2,13 @@ import React, {Component} from 'react';
 import {Route, Switch, Redirect} from 'react-router-dom'
 import Auth from './containers/Auth/Auth'
 import Overview from './containers/Overview/Overview'
+import Projects from './containers/Overview/Projects/Projects'
 import {connect} from 'react-redux'
 import * as actions from './store/actions/index'
 import classes from './App.module.css'
 import Dots from './components/BackgroundEl/Dots/Dots'
 import firebase from 'firebase'
+
 class App extends Component {
     state={
         sectionHeight: null,
@@ -39,11 +41,16 @@ class App extends Component {
     }
 
     render(){
-        let routes =(
+        const routesWhite =(
             <Switch>
                 <Route path='/auth' component={Auth}/>
                 <Route path='/auth' component={Overview}/>
                 <Route exact path='/' component={Overview}/>
+            </Switch>
+        )
+        const routesTransparent = (
+            <Switch>
+                <Route exact path='/' component={Projects}/>
             </Switch>
         )
         const components ={
@@ -64,14 +71,21 @@ class App extends Component {
                         className={classes['white-section']} 
                         style={{
                             height: `${this.state.sectionHeight}px`,
-                            transform: this.props.user ? 'translate(100%,0)' : null
+                            transform: this.props.user 
+                                ? 'translate(100%,0)' 
+                                : null
                         }}>
-                        {routes}
+                        {routesWhite}
                     </section>
-                    <section className={classes['transparent-section']} style={{
-                        height: `${this.state.sectionHeight}px`
+                    <section 
+                        className={classes['transparent-section']} 
+                        style={{
+                            height: `${this.state.sectionHeight}px`,
+                            transform: this.props.user 
+                                ? 'translate(-100%,0)' 
+                                : null
                     }}>
-                        <h2>Project Management</h2>
+                        {routesTransparent}
                     </section>
                 </main>
                 {bgItems}
