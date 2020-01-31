@@ -9,7 +9,7 @@ export function* loginSaga(action){
         const user = yield firebase.auth().signInWithEmailAndPassword(email,password)
         yield put(actions.setUser(user))
         yield put(actions.authError(null))
-        yield put(actions.fetchUserData(user.uid))
+        yield put(actions.fetchUserData(user.user.uid))
     }catch(e){
         yield put(actions.authError({message:'Invalid username/password', e}))
     }
@@ -17,11 +17,13 @@ export function* loginSaga(action){
 
 export function* fetchUserDataSaga(action){
     const {id} = action
+    console.log(action, id)
     try{
         const userData = yield db.collection('userData').doc(id).get()
-        yield put(action.setUser(userData))
+        yield put(actions.setUser(userData))
     }catch(e){
-        yield put(action.setUser('NOT FOUND'))
+        console.log(e)
+        yield put(actions.setUser('NOT FOUND'))
     }
 }
 

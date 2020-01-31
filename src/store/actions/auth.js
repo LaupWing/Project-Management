@@ -29,6 +29,7 @@ export const authSignup = (email, password)=>{
 }
 
 export const fetchUserData = (id)=>{
+    console.log(id)
     return{
         type: actionTypes.FETCH_USERDATA_SAGA,
         id
