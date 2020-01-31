@@ -4,7 +4,6 @@ import * as actions from '../../actions/index'
 
 export function* loginSaga(action){
     const {email, password} = action
-    console.log(action)
     try{
         const user = yield firebase.auth().signInWithEmailAndPassword(email,password)
         yield put(actions.setUser(user))

@@ -16,7 +16,7 @@ const setUser = (state,action) =>{
 const setError = (state,action) =>{
     return {
         ...state,
-        user: action.error.message
+        error: action.error.message
     }
 }
 
