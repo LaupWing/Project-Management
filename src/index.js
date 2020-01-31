@@ -26,6 +26,7 @@ sagaMiddleware.run(watchAuth)
 
 firebase.auth().onAuthStateChanged(()=>{
     // Initialize app when app is not created yet
+    console.log(user)
     if(!app){
         app = ReactDOM.render(
             <Provider store={store}>

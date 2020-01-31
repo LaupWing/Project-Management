@@ -7,7 +7,6 @@ import * as actions from './store/actions/index'
 import classes from './App.module.css'
 import Dots from './components/BackgroundEl/Dots/Dots'
 import firebase from 'firebase'
-
 class App extends Component {
     state={
         sectionHeight: null,
@@ -28,11 +27,10 @@ class App extends Component {
             },
         ]
     }
-
+    
     componentDidMount(){
         firebase.auth().onAuthStateChanged(user=>{
-            console.log(user)
-            this.props.setUser('user')
+            this.props.setUser(user)
         })
         const sectionWidth = document.querySelector('section').offsetWidth
         this.setState({
@@ -91,7 +89,7 @@ const mapStateToProps = state =>{
 
 const mapDispatchToProps = dispatch =>{
     return {
-        setUser: () => dispatch(actions.setUser())
+        setUser: (user) => dispatch(actions.setUser(user))
     }
 }
 
