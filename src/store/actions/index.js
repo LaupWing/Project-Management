@@ -1,3 +1,4 @@
 export{
-    setUser
+    setUser,
+    authError
 }from './auth'

@@ -6,3 +6,10 @@ export const setUser = (user) =>{
         user
     }
 }
+
+export const authError = (error)=>(
+    {
+        type: actionTypes.AUTH_ERROR,
+        error
+    }
+)
