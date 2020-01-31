@@ -9,6 +9,10 @@ class Auth extends React.Component{
     state={
         type: 'login'
     }
+
+    onLogin(email,password){
+        console.log(email,password)
+    }
     checkAuthType(name){
         return this.state.type === name ? ['switch-auth', 'active'] : ['switch-auth']
     }
@@ -50,7 +54,9 @@ class Auth extends React.Component{
                             exit: '',
                         }}
                     >
-                        <Login/>
+                        <Login 
+                            submitted={this.onLogin.bind(this)}
+                        />
                     </CSSTransition>
                     <CSSTransition
                         mountOnEnter 
@@ -65,7 +71,9 @@ class Auth extends React.Component{
                             exit: '',
                         }}
                     >
-                        <Signup/>
+                        <Signup 
+                            submitted={this.onLogin.bind(this)}
+                        />
                     </CSSTransition>
                 </main>
             </div>
