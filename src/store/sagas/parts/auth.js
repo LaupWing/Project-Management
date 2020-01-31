@@ -8,6 +8,6 @@ export function* loginSaga(action){
         const user = yield firebase.auth().signInWithEmailAndPassword(email,password)
         yield put(actions.setUser(user))
     }catch(e){
-        yield put(actions.authError(e))
+        yield put(actions.authError({message:'Invalid username/password', e}))
     }
 }

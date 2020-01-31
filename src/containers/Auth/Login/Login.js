@@ -1,10 +1,17 @@
 import React from 'react'
 import Button from '../../../components/UI/Button/Button'
+import {connect} from 'react-redux'
 
-export default (props) =>{
+const mapStateToProps = state =>{
+    return{
+        error: state.user.error
+    }
+}
+
+export default connect(mapStateToProps)((props) =>{
     const [emailState, setEmailState] = React.useState('')
     const [passwordState, setPasswordState] = React.useState('')
-
+    console.log(props)
     return (
         <form 
             onSubmit={(e)=>{
@@ -29,9 +36,12 @@ export default (props) =>{
                     setPasswordState(newPassword)
                 }}
             ></input>
+            {props.error 
+            ? <p>{props.error}</p>
+            : null}
             <Button>
                 Login
             </Button>
         </form>
     )
-}
+})
