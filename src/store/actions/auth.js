@@ -14,9 +14,15 @@ export const authError = (error)=>(
     }
 )
 export const authLogin = (email, password)=>{
-    console.log(email,password)
     return{
         type: actionTypes.AUTH_SAGA_LOGIN,
+        email,
+        password
+    }
+}
+export const authSignup = (email, password)=>{
+    return{
+        type: actionTypes.AUTH_SAGA_SIGNUP,
         email,
         password
     }

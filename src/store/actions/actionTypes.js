@@ -3,3 +3,4 @@ export const AUTH_ERROR = 'AUTH_ERROR'
 
 export const AUTH_USER_LOGIN = 'AUTH_USER_LOGIN'
 export const AUTH_SAGA_LOGIN = 'AUTH_SAGA_LOGIN'
+export const AUTH_SAGA_SIGNUP = 'AUTH_SAGA_SIGNUP'

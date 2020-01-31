@@ -18,10 +18,10 @@ class Auth extends React.Component{
     checkAuthType(name){
         return this.state.type === name ? ['switch-auth', 'active'] : ['switch-auth']
     }
-    toggleType(){
+    toggleType(type){
         this.props.setError(null)
         this.setState({
-            type: this.state.type === 'login' ? 'signup' : 'login'
+            type
         })
     }
     render(){
@@ -30,13 +30,13 @@ class Auth extends React.Component{
                 <h1>Welcome!</h1>
                 <nav>
                     <Button 
-                        clicked={this.toggleType.bind(this)} 
+                        clicked={()=>this.toggleType('login')} 
                         classes={this.checkAuthType('login')}
                     >
                         Login
                     </Button>
                     <Button 
-                        clicked={this.toggleType.bind(this)} 
+                        clicked={()=>this.toggleType('signup')} 
                         classes={this.checkAuthType('signup')}
                     >
                         Signup
