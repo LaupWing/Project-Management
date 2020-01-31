@@ -10,7 +10,14 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 50px;
+}
+.Auth h1{
     margin-top: 35%;
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--button-color);
+    font-weight: normal;
+    text-shadow: -5px 8px 2px rgba(0,0,0,.05);
 }
 .Auth main{
     position: relative;
@@ -27,12 +34,21 @@
     background: var(--contrast-color);
 }
 
-.Auth form input{
-    padding: 5px 10px;
+.Auth form input,
+.Auth form button{
     margin: 20px;
-    width: 200px;
+    border-radius: 5px;
+}
+.Auth form button{
+    padding: 7px 15px;
+    font-size: 1rem;
+    margin-top: 40px;
+}
+
+.Auth form input{
+    padding: 8px;
+    width: 250px;
     border: var(--highlight-color) 1px solid;
-    border-radius: 10px;
 }
 
 .left-enter{

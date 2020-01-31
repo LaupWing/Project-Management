@@ -21,6 +21,7 @@ class Auth extends React.Component{
     render(){
         return(
             <div className={classes.Auth}>
+                <h1>Welcome!</h1>
                 <nav>
                     <Button 
                         clicked={this.toggleType.bind(this)} 
