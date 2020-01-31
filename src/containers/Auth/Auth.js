@@ -13,7 +13,7 @@ class Auth extends React.Component{
     }
 
     onLogin(email,password){
-        console.log(email,password)
+        this.props.login(email,password)
     }
     checkAuthType(name){
         return this.state.type === name ? ['switch-auth', 'active'] : ['switch-auth']
@@ -83,4 +83,10 @@ class Auth extends React.Component{
     }
 }
 
-export default Auth
+const mapDispatchToProps = dispatch =>{
+    return {
+        login: (email, password) => dispatch(actions.authLogin(email, password))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Auth)
