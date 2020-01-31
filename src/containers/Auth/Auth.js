@@ -6,6 +6,7 @@ import Button from '../../components/UI/Button/Button'
 import CSSTransition from 'react-transition-group/CSSTransition'
 import {connect} from 'react-redux'
 import * as actions from '../../store/actions/index'
+import {Redirect} from 'react-router-dom'
 
 class Auth extends React.Component{
     state={
@@ -33,7 +34,8 @@ class Auth extends React.Component{
     render(){
         return(
             <div className={classes.Auth}>
-                <h1>Welcome!</h1>
+                {this.props.user ? <Redirect to='/'/>:null}
+                <h1 onClick={()=>console.log(this.props.user)}>Welcome!</h1>
                 <nav>
                     <Button 
                         clicked={()=>this.toggleType('login')} 
@@ -89,6 +91,12 @@ class Auth extends React.Component{
     }
 }
 
+const mapStateToProps = state=>{
+    return{
+        user: state.user.user
+    }
+}
+
 const mapDispatchToProps = dispatch =>{
     return {
         login: (email, password) => dispatch(actions.authLogin(email, password)),
@@ -97,4 +105,4 @@ const mapDispatchToProps = dispatch =>{
     }
 }
 
-export default connect(null, mapDispatchToProps)(Auth)
+export default connect(mapStateToProps, mapDispatchToProps)(Auth)

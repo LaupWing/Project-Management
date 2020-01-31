@@ -24,19 +24,18 @@ let app = null
 
 sagaMiddleware.run(watchAuth)
 
-firebase.auth().onAuthStateChanged((user)=>{
+firebase.auth().onAuthStateChanged(()=>{
     // Initialize app when app is not created yet
     if(!app){
         app = ReactDOM.render(
             <Provider store={store}>
                 <BrowserRouter>
-                    <App userData={user}/>
+                    <App/>
                 </BrowserRouter>
             </Provider>, document.getElementById('root')
         );
     }
 })
-
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

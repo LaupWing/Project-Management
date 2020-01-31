@@ -6,6 +6,7 @@ import {connect} from 'react-redux'
 import * as actions from './store/actions/index'
 import classes from './App.module.css'
 import Dots from './components/BackgroundEl/Dots/Dots'
+import firebase from 'firebase'
 
 class App extends Component {
     state={
@@ -29,7 +30,10 @@ class App extends Component {
     }
 
     componentDidMount(){
-        this.props.setUser(this.props.user)
+        firebase.auth().onAuthStateChanged(user=>{
+            console.log(user)
+            this.props.setUser('user')
+        })
         const sectionWidth = document.querySelector('section').offsetWidth
         this.setState({
             sectionHeight: sectionWidth * 1.5
@@ -58,9 +62,12 @@ class App extends Component {
             <div className={classes.App}>
                 {this.props.user === null ? <Redirect to='/auth'/>:null}
                 <main>
-                    <section className={classes['white-section']} style={{
-                        height: `${this.state.sectionHeight}px`
-                    }}>
+                    <section 
+                        className={classes['white-section']} 
+                        style={{
+                            height: `${this.state.sectionHeight}px`,
+                            transform: this.props.user ? 'translate(100%,0)' : null
+                        }}>
                         {routes}
                     </section>
                     <section className={classes['transparent-section']} style={{
