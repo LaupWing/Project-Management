@@ -41,9 +41,10 @@ export const setUserData = (data) =>{
         data
     }
 }
-export const saveUserDataToDB = (data) =>{
+export const saveUserDataToDB = (id, userData) =>{
     return {
         type: actionTypes.SAVE_USERDATA_TO_DB_SAGA,
-        data
+        userData,
+        id
     }
 }

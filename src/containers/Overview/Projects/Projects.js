@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import styles from './Projects.module.css'
 import Button from '../../../components/UI/Button/Button'
 import CSSTransition from 'react-transition-group/CSSTransition'
+import * as actions from '../../../store/actions/index'
 
 class Projects extends React.Component{
     state = {
@@ -54,8 +55,16 @@ class Projects extends React.Component{
 
 const mapStateToProps = state=>{
     return{
-        userData: state.user.userData
+        userData: state.user.userData,
     }
 }
+
+const mapDispatchToProps = dispatch =>{
+    return {
+        saveUserDataToDB: (id, userData)=> dispatch(actions.saveUserDataToDB(id, userData))
+    }
+}
+
+
 
 export default connect(mapStateToProps)(Projects)

@@ -14,6 +14,21 @@ export function* loginSaga(action){
     }
 }
 
+export function* updateUserDataSaga(action){
+    const {userData, id} = action
+    try{
+        const updating = yield db
+            .collection('userData')
+            .doc(id)
+            .update(userData)
+        console.log(updating)
+        yield put(actions.setUserData(userData))
+    }catch(e){
+        console.log(e)
+        yield put(actions.setUserData({type:'ERROR',e}))
+    } 
+}
+
 export function* fetchUserDataSaga(action){
     const {id} = action
     try{
