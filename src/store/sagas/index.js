@@ -5,7 +5,7 @@ import {
     loginSaga,
     signUpSaga,
     fetchUserDataSaga
-}from './parts/auth'
+}from './parts/user'
 
 export function* watchAuth(){
     yield takeEvery(actionTypes.AUTH_LOGIN_SAGA, loginSaga)
