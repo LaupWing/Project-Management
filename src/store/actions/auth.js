@@ -41,3 +41,9 @@ export const setUserData = (data) =>{
         data
     }
 }
+export const saveUserDataToDB = (data) =>{
+    return {
+        type: actionTypes.SAVE_USERDATA_TO_DB_SAGA,
+        data
+    }
+}

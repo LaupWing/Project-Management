@@ -29,7 +29,7 @@
     transform: translateY(-20%);
 }
 .enterName input::placeholder{
-    color: rgba(0,0,0,.3);
+    color: rgba(255,255,255,.3);
 }
 .button-enter{
     animation: buttonFade .5s forwards;
