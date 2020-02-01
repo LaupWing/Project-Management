@@ -1,8 +1,11 @@
 .Dots{
     position: fixed;
-    width: 25vw;
+    height: 25vh;
     opacity: .05;
     max-width: 500px;
+    user-select: none;
+    pointer-events: none;
+
 }
 .Dots circle{
     fill:#fff;

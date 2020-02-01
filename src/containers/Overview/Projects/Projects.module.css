@@ -1,0 +1,61 @@
+.enterName{
+    /* margin-bottom: 30%; */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.wrapper{
+    margin: 20%;
+    margin-top: 40%;
+}
+.enterName input{
+    border: none;
+    background: transparent;
+    animation: enteringInput 1s forwards;
+    animation-delay: 1s;
+    opacity: 0;
+    font-size: 3rem;
+    font-weight: bold;
+}
+.enterName h2{
+    font-size: 4rem;
+    color: var(--contrast-color);
+    margin-bottom: 10px;
+    animation: enteringH2 .5s forwards;
+    animation-delay: 1s;
+    opacity: 0;
+    transform: translateY(-20%);
+}
+.enterName input::placeholder{
+    color: rgba(0,0,0,.3);
+}
+.button-enter{
+    animation: buttonFade .5s forwards;
+}
+.button-exit{
+    animation: buttonFade .5s forwards reverse;
+}
+@keyframes enteringInput{
+    to{
+        opacity: 1;
+    }
+}
+@keyframes enteringH2{
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes buttonFade {
+    from {
+        opacity: 0;
+        transform: translateY(20%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

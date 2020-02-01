@@ -22,3 +22,8 @@
     background: var(--button-color);
     color: var(--contrast-color);
 }
+.enterName{
+    margin: 30px auto;
+    border-radius: 50px;
+    padding: 10px 15px;
+}
