@@ -5,12 +5,14 @@ import {
     loginSaga,
     signUpSaga,
     fetchUserDataSaga,
-    updateUserDataSaga
+    updateUserDataSaga,
+    setUserDataSaga
 }from './parts/user'
 
 export function* watchAuth(){
     yield takeEvery(actionTypes.AUTH_LOGIN_SAGA, loginSaga)
     yield takeEvery(actionTypes.AUTH_SIGNUP_SAGA, signUpSaga)
     yield takeEvery(actionTypes.FETCH_USERDATA_SAGA, fetchUserDataSaga)
-    yield takeEvery(actionTypes.SAVE_USERDATA_TO_DB_SAGA, updateUserDataSaga)
+    yield takeEvery(actionTypes.UPDATE_USERDATA_TO_DB_SAGA, updateUserDataSaga)
+    yield takeEvery(actionTypes.SET_USERDATA_TO_DB_SAGA, setUserDataSaga)
 }

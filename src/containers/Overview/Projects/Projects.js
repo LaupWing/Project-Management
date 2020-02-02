@@ -11,7 +11,17 @@ class Projects extends React.Component{
     }
     submitName(e){
         e.preventDefault()
-        console.log(this.state.name)
+        if(this.state.name.length > 0){
+            this.props.saveUserDataToDB(
+                this.props.user.uid,
+                {
+                    displayName: this.state.name,
+                    settings:{
+                        colorTheme: 'default'
+                    }
+                }
+            )
+        }
     }
     render(){
         return(
@@ -56,15 +66,16 @@ class Projects extends React.Component{
 const mapStateToProps = state=>{
     return{
         userData: state.user.userData,
+        user: state.user.user
     }
 }
 
 const mapDispatchToProps = dispatch =>{
     return {
-        saveUserDataToDB: (id, userData)=> dispatch(actions.saveUserDataToDB(id, userData))
+        saveUserDataToDB: (id, userData)=> dispatch(actions.updateUserDataToDB(id, userData))
     }
 }
 
 
 
-export default connect(mapStateToProps)(Projects)
+export default connect(mapStateToProps, mapDispatchToProps)(Projects)

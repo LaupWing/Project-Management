@@ -5,5 +5,5 @@ export{
     authSignup,
     fetchUserData,
     setUserData,
-    saveUserDataToDB
+    updateUserDataToDB
 }from './user'

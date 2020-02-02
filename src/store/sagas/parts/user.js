@@ -17,11 +17,26 @@ export function* loginSaga(action){
 export function* updateUserDataSaga(action){
     const {userData, id} = action
     try{
-        const updating = yield db
+        yield db
             .collection('userData')
             .doc(id)
             .update(userData)
-        console.log(updating)
+            
+        yield put(actions.setUserData(userData))
+    }catch(e){
+        console.log(e)
+        yield put(actions.setUserData({type:'ERROR',e}))
+    } 
+}
+
+export function* setUserDataSaga(action){
+    const {userData, id} = action
+    try{
+        const settingup = yield db
+            .collection('userData')
+            .doc(id)
+            .set(userData)
+        console.log(settingup)
         yield put(actions.setUserData(userData))
     }catch(e){
         console.log(e)
