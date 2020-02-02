@@ -14,7 +14,7 @@
     color: var(--highlight-color);
 }
 .Header form{
-    margin-top: 20px;
+    margin-top: 30px;
     width: 100%;
     background:var(--lighter-base-color);
     padding: 10px 15px;
@@ -35,9 +35,15 @@
 
 .Header svg > path{
     fill: var(--highlight-color);
+    transition: all .25s ease-in-out;
 }
+
+.Header svg:hover > path{
+    fill: var(--contrast-color);
+} 
 
 .Header svg{
     width: 30px;
     margin-right: 20px;
+    cursor: pointer;
 }
