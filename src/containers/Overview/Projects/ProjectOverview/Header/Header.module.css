@@ -13,3 +13,31 @@
 .Header p{
     color: var(--highlight-color);
 }
+.Header form{
+    margin-top: 20px;
+    width: 100%;
+    background:var(--lighter-base-color);
+    padding: 10px 15px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+}
+.Header input{
+    background: transparent;
+    font-size: 1rem;
+    color: var(--contrast-color);
+}
+
+.Header input::placeholder{
+    color: var(--highlight-color);
+    font-weight: bold;
+}
+
+.Header svg > path{
+    fill: var(--highlight-color);
+}
+
+.Header svg{
+    width: 30px;
+    margin-right: 20px;
+}
