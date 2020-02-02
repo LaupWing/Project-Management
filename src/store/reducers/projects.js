@@ -1,6 +1,15 @@
 
 const initialState ={
-    projects: []
+    projects: [
+        {
+            name: 'Test',
+            color:  '#08CDE8'
+        },
+        {
+            name: 'Test2',
+            color: '#FF00FF'
+        }
+    ]
 }
 
 
