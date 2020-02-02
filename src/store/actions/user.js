@@ -48,3 +48,10 @@ export const updateUserDataToDB = (id, userData) =>{
         id
     }
 }
+export const setUserDataToDB = (id, userData) =>{
+    return {
+        type: actionTypes.SET_USERDATA_TO_DB_SAGA,
+        userData,
+        id
+    }
+}

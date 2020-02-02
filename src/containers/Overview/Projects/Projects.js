@@ -12,7 +12,7 @@ class Projects extends React.Component{
     submitName(e){
         e.preventDefault()
         if(this.state.name.length > 0){
-            this.props.saveUserDataToDB(
+            this.props.setUserDataToDB(
                 this.props.user.uid,
                 {
                     displayName: this.state.name,
@@ -72,7 +72,7 @@ const mapStateToProps = state=>{
 
 const mapDispatchToProps = dispatch =>{
     return {
-        saveUserDataToDB: (id, userData)=> dispatch(actions.updateUserDataToDB(id, userData))
+        setUserDataToDB: (id, userData)=> dispatch(actions.setUserDataToDB(id, userData))
     }
 }
 

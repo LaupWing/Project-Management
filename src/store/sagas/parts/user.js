@@ -24,7 +24,6 @@ export function* updateUserDataSaga(action){
             
         yield put(actions.setUserData(userData))
     }catch(e){
-        console.log(e)
         yield put(actions.setUserData({type:'ERROR',e}))
     } 
 }
@@ -32,15 +31,19 @@ export function* updateUserDataSaga(action){
 export function* setUserDataSaga(action){
     const {userData, id} = action
     try{
-        const settingup = yield db
+        yield db
             .collection('userData')
             .doc(id)
             .set(userData)
-        console.log(settingup)
-        yield put(actions.setUserData(userData))
-    }catch(e){
-        console.log(e)
-        yield put(actions.setUserData({type:'ERROR',e}))
+        yield put(actions.setUserData({
+            type: 'GOT DATA',
+            userData
+        }))
+    }catch(error){
+        yield put(actions.setUserData({
+            type:'ERROR',
+            error
+        }))
     } 
 }
 
@@ -51,9 +54,14 @@ export function* fetchUserDataSaga(action){
         if(userData.exists){
             return yield put(actions.setUserData(userData))
         }
-        yield put(actions.setUserData({type:'NOT FOUND'}))
-    }catch(e){
-        yield put(actions.setUserData({type:'ERROR'}))
+        yield put(actions.setUserData({
+            type:'NOT FOUND'
+        }))
+    }catch(error){
+        yield put(actions.setUserData({
+            type:'ERROR',
+            error
+        }))
     }
 }
 
