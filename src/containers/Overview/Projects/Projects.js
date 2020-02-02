@@ -26,12 +26,12 @@ class Projects extends React.Component{
             <React.Fragment>
                 {this.props.userData 
                     ? this.props.userData.type === 'NOT FOUND'
-                            ?   <Entername
-                                    inputChanged={(e)=>this.setState({name: e.target.value})}
-                                    submitted={this.submitName.bind(this)}  
-                                    name={this.state.name}
-                                />
-                        : <p>found</p>
+                        ?   <Entername
+                                inputChanged={(e)=>this.setState({name: e.target.value})}
+                                submitted={this.submitName.bind(this)}  
+                                name={this.state.name}
+                            />
+                        :   <p>found</p>
                     : null
                 }
             </React.Fragment>
