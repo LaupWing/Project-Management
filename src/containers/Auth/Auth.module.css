@@ -48,7 +48,7 @@
 .Auth form input{
     padding: 8px;
     width: 250px;
-    border: var(--highlight-color) 1px solid;
+    border: rgba(0,0,0,.2) 1px solid;
 }
 
 .Auth p{

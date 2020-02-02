@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import * as actions from '../../../store/actions/index'
 import Entername from './EnterName/EnterName'
+import ProjectOverview from './ProjectOverview/ProjectOverview'
 
 class Projects extends React.Component{
     state = {
@@ -31,7 +32,9 @@ class Projects extends React.Component{
                                 submitted={this.submitName.bind(this)}  
                                 name={this.state.name}
                             />
-                        :   <p>found</p>
+                        :   <ProjectOverview
+                                userData={this.props.userData.userData}
+                            />
                     : null
                 }
             </React.Fragment>

@@ -1,0 +1,15 @@
+.Header{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.Header h1{
+    color: var(--contrast-color);
+    font-size: 3rem;
+    font-weight: 600;
+}
+.Header p{
+    color: var(--highlight-color);
+}

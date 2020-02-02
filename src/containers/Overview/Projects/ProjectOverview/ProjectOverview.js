@@ -4,7 +4,7 @@ import Header from './Header/Header'
 export default (props)=>{
     return (
         <div>
-            <Header/>
+            <Header name={props.userData.displayName}/>
         </div>
     )
 }

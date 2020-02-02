@@ -22,7 +22,10 @@ export function* updateUserDataSaga(action){
             .doc(id)
             .update(userData)
             
-        yield put(actions.setUserData(userData))
+        yield put(actions.setUserData({
+            type: 'GOT DATA',
+            userData
+        }))
     }catch(e){
         yield put(actions.setUserData({type:'ERROR',e}))
     } 
@@ -52,7 +55,10 @@ export function* fetchUserDataSaga(action){
     try{
         const userData = yield db.collection('userData').doc(id).get()
         if(userData.exists){
-            return yield put(actions.setUserData(userData))
+            return yield put(actions.setUserData({
+                userData:userData.data(),
+                type: 'GOT DATA'
+            }))
         }
         yield put(actions.setUserData({
             type:'NOT FOUND'
