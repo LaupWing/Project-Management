@@ -1,0 +1,14 @@
+.ProjectList{
+    margin-top: 15%;
+}
+
+.ProjectList h2 {
+    color: var(--contrast-color);
+}
+.ProjectList h2 span{
+    color: var(--highlight-color);
+}
+
+.ProjectList main{
+    margin-top: 20px;
+}
