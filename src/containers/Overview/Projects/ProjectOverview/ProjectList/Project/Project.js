@@ -9,8 +9,13 @@ const mapDispatchToProps = dispatch =>{
         setActiveProject: (project) => dispatch(actions.setActiveProject(project))
     }
 }
+const mapStateToProps = state =>{
+    return{
+        active: state.projects.activeProject
+    }
+}
 
-export default connect(null, mapDispatchToProps)((props)=>{
+export default connect(mapStateToProps, mapDispatchToProps)((props)=>{
     const projectEl = React.useRef(null)
     const [bgState, setBgState] = React.useState(null)
     const [heightState, setHeight] = React.useState(null)
@@ -36,12 +41,14 @@ export default connect(null, mapDispatchToProps)((props)=>{
             .join(' ')
             : name[0]
     }
-    
+    const setProject = ()=>{
+        props.setActiveProject(props.project)
+    }
     return(
-        <div className={styles.container}>
+        <div className={`${styles.container} ${props.active === props.project ? styles.active : ''}`} onClick={setProject}>
             <div 
                 ref={projectEl} 
-                className={styles.ProjectWrapper}
+                className={`${styles.ProjectWrapper}`}
                 style={{
                     height: heightState,
                 }}

@@ -27,18 +27,22 @@
     justify-content: center;
     align-items: center;
     color: var(--contrast-color);
+    transition: all .5s;
 }
 .Project h1{
     font-size: 2rem;
 }
 
-.active::before{
+.active{
+    opacity: 1;
+}
+.active .Project::before{
     position: absolute;
-    width: 108%;
-    height: 108%;
+    width: 110%;
+    height: 110%;
     border-radius: 15px;
     content: '';
-    border: solid 3px var(--main-color);
+    border: solid 4px var(--main-color);
 }
 .container p{
     color:var(--contrast-color);
