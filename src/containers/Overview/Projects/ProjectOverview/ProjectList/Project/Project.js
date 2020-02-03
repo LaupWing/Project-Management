@@ -9,6 +9,7 @@ export default (props)=>{
         projectEl.current.style.setProperty('--main-color', props.project.color)
     },[props.project.color])
 
+
     const abbreviation = (name)=>{
         return name.includes(' ') ? name
             .split(' ')
@@ -16,6 +17,7 @@ export default (props)=>{
             .join(' ')
             : name[0]
     }
+    
     return(
         <div className={styles.container}>
             <div 
