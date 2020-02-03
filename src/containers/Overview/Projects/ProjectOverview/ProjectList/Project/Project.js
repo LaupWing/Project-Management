@@ -1,10 +1,16 @@
 import React from 'react'
 import styles from './Project.module.css'
 import Color from 'color'
+import {connect} from 'react-redux'
+import * as actions from '../../../../../../store/actions/index'
 
+const mapDispatchToProps = dispatch =>{
+    return{
+        setActiveProject: (project) => dispatch(actions.setActiveProject(project))
+    }
+}
 
-
-export default (props)=>{
+export default connect(null, mapDispatchToProps)((props)=>{
     const projectEl = React.useRef(null)
     const [bgState, setBgState] = React.useState(null)
     const [heightState, setHeight] = React.useState(null)
@@ -53,4 +59,4 @@ export default (props)=>{
             <p>{props.project.name}</p>
         </div>
     )
-}
+})

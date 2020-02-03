@@ -19,12 +19,12 @@ export default (props)=>{
         }
     }
     return(
-        <div className={styles.container}>
+        <div className={styles.container} style={{opacity:1}}>
             <div 
                 ref={projectEl} 
                 className={styles.ProjectWrapper}
                 style={{
-                    height: heightState,
+                    height: heightState
                 }}
             >
                 <div 

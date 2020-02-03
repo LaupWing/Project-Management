@@ -1,6 +1,13 @@
 .container{
     flex-basis:33.33%; 
     margin-bottom: 15px;
+    opacity: .5;
+    transition: opacity .5s;
+    cursor: pointer;
+}
+
+.container:hover{
+    opacity: 1;
 }
 .ProjectWrapper{
     width: 100%;
@@ -25,13 +32,13 @@
     font-size: 2rem;
 }
 
-.Project::before{
-    /* position: absolute;
+.active::before{
+    position: absolute;
     width: 108%;
     height: 108%;
     border-radius: 15px;
     content: '';
-    border: solid 3px var(--main-color); */
+    border: solid 3px var(--main-color);
 }
 .container p{
     color:var(--contrast-color);

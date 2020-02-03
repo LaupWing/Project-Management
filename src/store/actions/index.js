@@ -8,3 +8,6 @@ export{
     updateUserDataToDB,
     setUserDataToDB
 }from './user'
+export{
+    setActiveProject
+}from './projects'
