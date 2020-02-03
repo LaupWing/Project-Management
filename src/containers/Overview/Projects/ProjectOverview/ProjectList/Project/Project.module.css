@@ -1,3 +1,28 @@
+.ProjectWrapper{
+    flex-basis:33.33%; 
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    --main-color: var(--contrast-color);
+}
+
 .Project{
-    
+    width: 90%;
+    height: 90%;
+    background-color: var(--main-color);
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--contrast-color);
+}
+
+.Project::before{
+    position: absolute;
+    width: 108%;
+    height: 108%;
+    border-radius: 15px;
+    content: '';
+    border: solid 3px var(--main-color);
 }

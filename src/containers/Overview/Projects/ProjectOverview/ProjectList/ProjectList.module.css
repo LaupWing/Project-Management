@@ -15,8 +15,8 @@
 
 .ProjectList main{
     margin-top: 20px;
-    background-color: orange;
     display: flex;
     flex-wrap: wrap;
     flex-grow: 1;
+    align-items: flex-start;
 }

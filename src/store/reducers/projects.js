@@ -8,6 +8,10 @@ const initialState ={
         {
             name: 'Test2',
             color: '#FF00FF'
+        },
+        {
+            name: 'Test Test',
+            color: '#FF00FF'
         }
     ]
 }
