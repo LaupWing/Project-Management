@@ -6,8 +6,8 @@ export default (props)=>{
     const [heightState, setHeight] = React.useState(null)
     React.useEffect(()=>{
         setHeight(`${projectEl.current.offsetWidth}px`)
-        projectEl.current.style.setProperty('--main-color', props.project.color);
-    })
+        projectEl.current.style.setProperty('--main-color', props.project.color)
+    },[props.project.color])
 
     const abbreviation = (name)=>{
         return name.includes(' ') ? name

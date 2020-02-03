@@ -1,6 +1,6 @@
 .container{
     flex-basis:33.33%; 
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 .ProjectWrapper{
     width: 100%;
@@ -11,9 +11,9 @@
 }
 
 .Project{
-    width: 80%;
-    height: 80%;
-    margin-top: 10%;
+    width: 70%;
+    height: 70%;
+    margin-top: 20%;
     background-color: var(--main-color);
     border-radius: 10px;
     position: relative;
@@ -27,12 +27,12 @@
 }
 
 .Project::before{
-    position: absolute;
+    /* position: absolute;
     width: 108%;
     height: 108%;
     border-radius: 15px;
     content: '';
-    border: solid 3px var(--main-color);
+    border: solid 3px var(--main-color); */
 }
 .container p{
     color:var(--contrast-color);
