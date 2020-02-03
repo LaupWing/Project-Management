@@ -30,7 +30,8 @@ const initialState ={
             color: '#FF00FF'
         }
     ],
-    activeProject: null
+    activeProject: null,
+    limit: 5
 }
 
 

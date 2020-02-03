@@ -43,7 +43,7 @@ export default (props)=>{
                 <div 
                     className={styles.Project}
                     style={{
-                        background: bgState,
+                        backgroundColor: bgState,
                         background: bgGradientState
                     }}
                 >
