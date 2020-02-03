@@ -17,16 +17,19 @@ export default (props)=>{
             : name[0]
     }
     return(
-        <div 
-            ref={projectEl} 
-            className={styles.ProjectWrapper}
-            style={{
-                height: heightState
-            }}
-        >
-            <div className={styles.Project}>
-                <h1>{abbreviation(props.project.name)}</h1>
+        <div className={styles.container}>
+            <div 
+                ref={projectEl} 
+                className={styles.ProjectWrapper}
+                style={{
+                    height: heightState
+                }}
+            >
+                <div className={styles.Project}>
+                    <h1>{abbreviation(props.project.name)}</h1>
+                </div>
             </div>
+            <p>{props.project.name}</p>
         </div>
     )
 }
