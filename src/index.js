@@ -6,8 +6,9 @@ import * as serviceWorker from './serviceWorker';
 import {createStore, combineReducers, applyMiddleware} from 'redux'
 import {Provider} from 'react-redux'
 import user from './store/reducers/user'
-import './initFirebase'
 import projects from './store/reducers/projects'
+import error from './store/reducers/error'
+import './initFirebase'
 import firebase from 'firebase'
 import {BrowserRouter} from 'react-router-dom'
 import {watchAuth, watchProjects} from './store/sagas/index'
@@ -15,7 +16,8 @@ import createSagaMiddleware from  'redux-saga'
 
 const rootrReducer = combineReducers({
     user,
-    projects
+    projects,
+    error
 })
 const sagaMiddleware = createSagaMiddleware()
 const store = createStore(rootrReducer, applyMiddleware(sagaMiddleware))
