@@ -10,7 +10,7 @@ import './initFirebase'
 import projects from './store/reducers/projects'
 import firebase from 'firebase'
 import {BrowserRouter} from 'react-router-dom'
-import {watchAuth} from './store/sagas/index'
+import {watchAuth, watchProjects} from './store/sagas/index'
 import createSagaMiddleware from  'redux-saga'
 
 const rootrReducer = combineReducers({
@@ -23,6 +23,7 @@ const store = createStore(rootrReducer, applyMiddleware(sagaMiddleware))
 let app = null
 
 sagaMiddleware.run(watchAuth)
+sagaMiddleware.run(watchProjects)
 
 firebase.auth().onAuthStateChanged(()=>{
     // Initialize app when app is not created yet

@@ -54,7 +54,7 @@ const setProjects = (state,action)=>{
 const reducer = (state=initialState, action)=>{
     switch(action.type){
         case actionTypes.SET_ACTIVE_PROJECT:    return setActiveProject(state,action)
-        case actionTypes.SET_PROJECTs:    return setProjects(state,action)
+        case actionTypes.SET_PROJECTS:    return setProjects(state,action)
         default: return state
     }
 }
