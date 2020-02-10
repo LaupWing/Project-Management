@@ -13,3 +13,6 @@ export{
     fetchUserProjects,
     setUserProjects
 }from './projects'
+export{
+    setError
+}from './error'
