@@ -35,19 +35,26 @@ const initialState ={
     limit: 5
 }
 
-const setUserData = (state,action) =>{
+const setActiveProject = (state,action) =>{
     return {
         ...state,
         activeProject: action.project
     }
 }
 
+const setProjects = (state,action)=>{
+    return{
+        ...state,
+        projects: action.projects
+    }
+}
 
 
 
 const reducer = (state=initialState, action)=>{
     switch(action.type){
-        case actionTypes.SET_ACTIVE_PROJECT:    return setUserData(state,action)
+        case actionTypes.SET_ACTIVE_PROJECT:    return setActiveProject(state,action)
+        case actionTypes.SET_PROJECTs:    return setProjects(state,action)
         default: return state
     }
 }

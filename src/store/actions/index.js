@@ -9,5 +9,6 @@ export{
     setUserDataToDB
 }from './user'
 export{
-    setActiveProject
+    setActiveProject,
+    fetchUserProjects
 }from './projects'
