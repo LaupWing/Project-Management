@@ -1,4 +1,13 @@
 .ProjectOverview{
     width: 75%;
     height: 90%;
+    animation: startup 1s forwards;
+    opacity: 0;
+    animation-delay: 1s;
+}
+
+@keyframes startup{
+    to{
+        opacity: 1;
+    }
 }
