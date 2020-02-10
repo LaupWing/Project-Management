@@ -10,5 +10,6 @@ export{
 }from './user'
 export{
     setActiveProject,
-    fetchUserProjects
+    fetchUserProjects,
+    setUserProjects
 }from './projects'

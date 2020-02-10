@@ -7,6 +7,12 @@ export const setActiveProject = (project)=>{
     }
 }
 
+export const setUserProjects = (projects)=>{
+    return{
+        type: actionTypes.SET_PROJECTS,
+        projects
+    }
+}
 export const fetchUserProjects = (id)=>{
     return{
         type: actionTypes.FETCH_USERPROJECTS_SAGA,

@@ -35,6 +35,7 @@ class App extends Component {
             this.props.setUser(user)
             if(user){
                 this.props.onUserDataFetch(user.uid)
+                this.props.onUserProjetsFetch(user.uid)
             }
         })
         const sectionWidth = document.querySelector('section').offsetWidth
@@ -107,7 +108,9 @@ const mapStateToProps = state =>{
 const mapDispatchToProps = dispatch =>{
     return {
         setUser: (user) => dispatch(actions.setUser(user)),
-        onUserDataFetch: (id) => dispatch(actions.fetchUserData(id))
+        onUserDataFetch: (id) => dispatch(actions.fetchUserData(id)),
+        onUserProjetsFetch: (id) => dispatch(actions.fetchUserProjects(id))
+
     }
 }
 
