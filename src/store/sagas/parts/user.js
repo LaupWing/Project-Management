@@ -9,8 +9,12 @@ export function* loginSaga(action){
         const user = yield firebase.auth().signInWithEmailAndPassword(email,password)
         yield put(actions.setUser(user))
         yield put(actions.setError(null))
-    }catch(e){
-        yield put(actions.setError({message:'Invalid username/password', e}))
+    }catch(error){
+        yield put(actions.setError({
+            type: 'AUTH ERROR',
+            message:'Invalid username/password', 
+            error
+        }))
     }
 }
 
@@ -23,8 +27,13 @@ export function* updateUserDataSaga(action){
             .update(userData)
         
         yield put(actions.setUserData(userData))
-    }catch(e){
-        yield put(actions.setUserData({type:'ERROR',e}))
+        yield put(actions.setError(null))
+    }catch(error){
+        yield put(actions.setError({
+            type:'SERVER ERROR',
+            message: 'Something went wrong with the server while update',
+            error
+        }))
     } 
 }
 
@@ -36,9 +45,11 @@ export function* setUserDataSaga(action){
             .doc(id)
             .set(userData)
         yield put(actions.setUserData(userData))
+        yield put(actions.setError(null))
     }catch(error){
-        yield put(actions.setUserData({
-            type:'ERROR',
+        yield put(actions.setError({
+            type:'SERVER ERROR',
+            message: 'Something went wrong with the server while adding',
             error
         }))
     } 
@@ -52,12 +63,15 @@ export function* fetchUserDataSaga(action){
             yield put(actions.setError(null))
             return yield put(actions.setUserData(userData.data()))
         }
-        // yield put(actions.setUserData({
-        //     type:'NOT FOUND'
-        // }))
+        yield put(actions.setError({
+            type:'NOT FOUND',
+            message: 'User not found',
+            error: null
+        }))
     }catch(error){
-        yield put(actions.setUserData({
-            type:'ERROR',
+        yield put(actions.setError({
+            type:'SERVER ERROR',
+            message: 'Something went wrong with the server',
             error
         }))
     }
@@ -69,7 +83,11 @@ export function* signUpSaga(action){
         const user = yield firebase.auth().createUserWithEmailAndPassword(email,password)
         yield put(actions.setUser(user))
         yield put(actions.setError(null))
-    }catch(e){
-        yield put(actions.setError({message:'Invalid username/password', e}))
+    }catch(error){
+        yield put(actions.setError({
+            type: 'SERVER ERROR',
+            message:'Invalid username/password', 
+            error
+        }))
     }
 }
