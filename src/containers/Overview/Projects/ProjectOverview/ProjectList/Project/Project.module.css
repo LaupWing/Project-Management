@@ -28,6 +28,8 @@
     align-items: center;
     color: var(--contrast-color);
     transition: all .5s;
+    position: relative;
+    overflow: hidden;
 }
 .Project h1{
     font-size: 2rem;
@@ -47,4 +49,11 @@
 .container p{
     color:var(--contrast-color);
     text-align: center;
+}
+
+.backgroundLetter{
+    opacity: .15;
+    position: absolute;
+    font-size: 8rem;
+    top: 0;
 }

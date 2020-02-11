@@ -44,6 +44,28 @@ export default connect(mapStateToProps, mapDispatchToProps)((props)=>{
     const setProject = ()=>{
         props.setActiveProject(props.project)
     }
+    const bgDeco = (name)=>{
+        const letters = name
+        .split(' ')
+        .map(word=>word[0])
+        
+        return letters.map(ltr=>{
+            const leftOrRight = Math.random() <0.5 ? 'left' : 'right'
+            const randomNumber = ()=> Math.floor(Math.random() * 30) + 10 
+            const minusOrNot = Math.random() <0.5 ? '-' : ''
+            const translate  = `translate(${leftOrRight === 'left'?'-':''}${randomNumber()}%, ${minusOrNot + randomNumber()}%)`
+
+            return(<p 
+                className={styles.backgroundLetter}
+                style={{
+                    [leftOrRight]:0,
+                    transform: translate
+                }}
+            >
+                {ltr}
+            </p>)
+        })
+    }
     return(
         <div className={`${styles.container} ${props.active === props.project ? styles.active : ''}`} onClick={setProject}>
             <div 
@@ -60,6 +82,7 @@ export default connect(mapStateToProps, mapDispatchToProps)((props)=>{
                         background: bgGradientState
                     }}
                 >
+                    {bgDeco(props.project.name)}
                     <h1>{abbreviation(props.project.name)}</h1>
                 </div>
             </div>
