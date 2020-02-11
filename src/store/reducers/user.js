@@ -21,6 +21,7 @@ const setError = (state,action) =>{
     }
 }
 const setUserData = (state,action) =>{
+    console.log(action)
     return {
         ...state,
         userData: action.data
