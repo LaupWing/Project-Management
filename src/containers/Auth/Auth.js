@@ -100,7 +100,7 @@ const mapStateToProps = state=>{
 const mapDispatchToProps = dispatch =>{
     return {
         login: (email, password) => dispatch(actions.authLogin(email, password)),
-        setError: (error) => dispatch(actions.authError(error)),
+        setError: (error) => dispatch(actions.setError(error)),
         signUp: (email,password) => dispatch(actions.authSignup(email,password))
     }
 }

@@ -7,12 +7,6 @@ export const setUser = (user) =>{
     }
 }
 
-export const authError = (error)=>(
-    {
-        type: actionTypes.AUTH_ERROR,
-        error
-    }
-)
 export const authLogin = (email, password)=>{
     return{
         type: actionTypes.AUTH_LOGIN_SAGA,
