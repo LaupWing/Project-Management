@@ -22,10 +22,7 @@ export function* updateUserDataSaga(action){
             .doc(id)
             .update(userData)
             
-        yield put(actions.setUserData({
-            type: 'GOT DATA',
-            userData
-        }))
+        yield put(actions.setUserData(userData))
     }catch(e){
         yield put(actions.setUserData({type:'ERROR',e}))
     } 
@@ -38,10 +35,7 @@ export function* setUserDataSaga(action){
             .collection('userData')
             .doc(id)
             .set(userData)
-        yield put(actions.setUserData({
-            type: 'GOT DATA',
-            userData
-        }))
+        yield put(actions.setUserData(userData))
     }catch(error){
         yield put(actions.setUserData({
             type:'ERROR',
@@ -57,9 +51,9 @@ export function* fetchUserDataSaga(action){
         if(userData.exists){
             return yield put(actions.setUserData(userData.data()))
         }
-        yield put(actions.setUserData({
-            type:'NOT FOUND'
-        }))
+        // yield put(actions.setUserData({
+        //     type:'NOT FOUND'
+        // }))
     }catch(error){
         yield put(actions.setUserData({
             type:'ERROR',
