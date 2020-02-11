@@ -5,6 +5,8 @@
     text-transform: uppercase;
     cursor: pointer;
     transition: all .25s ease-in;
+    position: relative;
+    overflow: hidden;
 }
 .switch-auth{
     width: 100px;
@@ -30,5 +32,19 @@
 .addProject{
     border-radius: 20px;
     margin-left: 10px;
-    font-weight: bold;
+}
+
+.Button:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.3);
+    opacity: 0;
+    transition: .25s;
+}
+.Button:hover:before{
+    opacity: 1;
 }

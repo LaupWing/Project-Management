@@ -6,7 +6,7 @@ import Button from '../../../../../components/UI/Button/Button'
 export default (props)=>{
     return(
         <section className={styles.ProjectList}>
-            <h2>Projects <span>({props.projects.length})</span> <Button classes={['addProject']}>Button</Button></h2>
+            <h2>Projects <span>({props.projects.length})</span> <Button classes={['addProject']}>Add project</Button></h2>
 
             <main>
                 {props.projects && props.projects.slice(0,props.limit).map((project,id)=>{
