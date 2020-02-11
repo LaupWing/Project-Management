@@ -55,10 +55,7 @@ export function* fetchUserDataSaga(action){
     try{
         const userData = yield db.collection('userData').doc(id).get()
         if(userData.exists){
-            return yield put(actions.setUserData({
-                userData:userData.data(),
-                type: 'GOT DATA'
-            }))
+            return yield put(actions.setUserData(userData.data()))
         }
         yield put(actions.setUserData({
             type:'NOT FOUND'

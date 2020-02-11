@@ -8,6 +8,6 @@ Inspiration: [https://dribbble.com/shots/6816310--Exploration-Dashboard-for-Task
 ## To Do's
 - [ ] Need to make a seperate Error Object
     -   [x] Create Error Reducer
-    -   [ ] Refactor the old code
-        -   [ ] Remove type property
-        -   [ ] Handle error via Error Object
+    -   [ ] Handle error via Error Object
+-   [ ] Refactor the old code
+    -   [ ] Remove type property
