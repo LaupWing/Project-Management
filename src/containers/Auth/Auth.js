@@ -18,7 +18,11 @@ class Auth extends React.Component{
     }
     onSignup(email,password, confirmPassword){
         if(password!== confirmPassword){
-            return this.props.setError({message:'Passwords has to be equal'})
+            return this.props.setError({
+                type: 'USER ERROR',
+                message:'Passwords has to be equal',
+                error: null
+            })
         }
         this.props.signUp(email,password)
     }

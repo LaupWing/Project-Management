@@ -6,7 +6,6 @@ const initialState ={
 
 const setError = (state,action)=>{
     return{
-        ...state, // prob not needed
         error: action.error
     }
 }

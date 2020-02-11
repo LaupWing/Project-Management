@@ -12,11 +12,11 @@ export default (props)=>{
                 {props.projects && props.projects.slice(0,props.limit).map((project,id)=>{
                     return <Project project={project} key={id}/>
                 })}
-                <ShowMore
+                {props.projects.length>5 &&<ShowMore
                     totalLength={props.projects.length}
                     limit={props.limit}
                     color='var(--lighter-base-color)'
-                />
+                />}
             </main>
         </section>
     )
