@@ -27,3 +27,8 @@
     border-radius: 50px;
     padding: 10px 15px;
 }
+.addProject{
+    border-radius: 20px;
+    margin-left: 10px;
+    font-weight: bold;
+}
