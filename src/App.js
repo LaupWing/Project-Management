@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Route, Switch, Redirect} from 'react-router-dom'
 import Auth from './containers/Auth/Auth'
 import Overview from './containers/Overview/Overview'
+import ProjectDetails from './containers/Overview/Details/Projects/Project'
 import Projects from './containers/Overview/Projects/Projects'
 import {connect} from 'react-redux'
 import * as actions from './store/actions/index'
@@ -35,7 +36,7 @@ class App extends Component {
             this.props.setUser(user)
             if(user){
                 this.props.onUserDataFetch(user.uid)
-                this.props.onUserProjetsFetch(user.uid)
+                this.props.onUserProjectsFetch(user.uid)
             }
         })
         const sectionWidth = document.querySelector('section').offsetWidth
@@ -49,7 +50,7 @@ class App extends Component {
             <Switch>
                 <Route path='/auth' component={Auth}/>
                 <Route path='/auth' component={Overview}/>
-                <Route exact path='/' component={Overview}/>
+                <Route exact path='/' component={ProjectDetails}/>
             </Switch>
         )
         const routesTransparent = (
@@ -109,7 +110,7 @@ const mapDispatchToProps = dispatch =>{
     return {
         setUser: (user) => dispatch(actions.setUser(user)),
         onUserDataFetch: (id) => dispatch(actions.fetchUserData(id)),
-        onUserProjetsFetch: (id) => dispatch(actions.fetchUserProjects(id))
+        onUserProjectsFetch: (id) => dispatch(actions.fetchUserProjects(id))
 
     }
 }
