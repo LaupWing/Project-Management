@@ -82,7 +82,9 @@ export default connect(mapStateToProps, mapDispatchToProps)((props)=>{
                         background: bgGradientState
                     }}
                 >
-                    {bgDeco(props.project.name)}
+                    <div className={styles.bgContainer}>
+                        {bgDeco(props.project.name)}
+                    </div>
                     <h1>{abbreviation(props.project.name)}</h1>
                 </div>
             </div>
