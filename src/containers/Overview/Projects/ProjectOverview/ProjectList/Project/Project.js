@@ -49,7 +49,7 @@ export default connect(mapStateToProps, mapDispatchToProps)((props)=>{
         .split(' ')
         .map(word=>word[0])
         
-        return letters.map(ltr=>{
+        return letters.map((ltr,i)=>{
             const leftOrRight = Math.random() <0.5 ? 'left' : 'right'
             const randomNumber = ()=> Math.floor(Math.random() * 30) + 10 
             const minusOrNot = Math.random() <0.5 ? '-' : ''
@@ -61,6 +61,7 @@ export default connect(mapStateToProps, mapDispatchToProps)((props)=>{
                     [leftOrRight]:0,
                     transform: translate
                 }}
+                key={i}
             >
                 {ltr}
             </p>)
