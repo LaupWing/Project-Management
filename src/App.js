@@ -96,7 +96,7 @@ class App extends Component {
                 </main>
                 <Modal
                     show={this.props.showModal}
-                    modalClose={()=>this.props.turnOffModal()}
+                    modalClose={this.props.turnOffModal}
                 >
                     {this.props.showModal ? 'A MODAL' : ''}
                 </Modal>
