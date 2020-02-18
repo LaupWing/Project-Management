@@ -10,6 +10,7 @@ import classes from './App.module.css'
 import Dots from './components/BackgroundEl/Dots/Dots'
 import firebase from 'firebase'
 import Modal from './components/UI/Modal/Modal'
+import AddProject from './components/AddProject/AddProject'
 
 class App extends Component {
     state={
@@ -98,7 +99,7 @@ class App extends Component {
                     show={this.props.showModal}
                     modalClose={this.props.turnOffModal}
                 >
-                    {this.props.showModal ? 'A MODAL' : ''}
+                    {this.props.showModal ? <AddProject/> : ''}
                 </Modal>
                 {bgItems}
             </div>
