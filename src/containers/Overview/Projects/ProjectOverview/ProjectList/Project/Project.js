@@ -33,7 +33,6 @@ export default connect(mapStateToProps, mapDispatchToProps)((props)=>{
         setBgState(color.hex())
         setBgGradientState(`linear-gradient(${randomGrade}deg, ${color.hsl().hex()} 0%, ${color.hsl().rotate(-30).hex()} 100%)`)
     }
-
     const abbreviation = (name)=>{
         return name.includes(' ') ? name
             .split(' ')
