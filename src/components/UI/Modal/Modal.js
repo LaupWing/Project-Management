@@ -8,7 +8,7 @@ export default (props)=>(
         <div 
             className={styles['Modal']}
             style={{
-                transform: props.show ? 'translateY(0)' : 'translateY(-500%)',
+                transform: props.show ? 'translateY(0)' : 'translateY(-70vh)',
                 opacity: props.show ? '1' : '0'
             }} 
         >
