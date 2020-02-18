@@ -19,3 +19,9 @@ export const fetchUserProjects = (id)=>{
         id
     }
 }
+export const openAddProjectModal = (open)=>{
+    return{
+        type: actionTypes.ADD_PROJECT_MODAL,
+        open
+    }
+}
