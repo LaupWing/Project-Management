@@ -9,6 +9,7 @@ import * as actions from './store/actions/index'
 import classes from './App.module.css'
 import Dots from './components/BackgroundEl/Dots/Dots'
 import firebase from 'firebase'
+import Modal from './components/UI/Modal/Modal'
 
 class App extends Component {
     state={
@@ -93,6 +94,12 @@ class App extends Component {
                         {routesTransparent}
                     </section>
                 </main>
+                <Modal
+                    show={this.props.showModal}
+                    modalClose={()=>this.state.turnOffModal()}
+                >
+                    {this.props.showModal ? 'A MODAL' : ''}
+                </Modal>
                 {bgItems}
             </div>
         )
@@ -101,8 +108,9 @@ class App extends Component {
 
 const mapStateToProps = state =>{
     return{
-        user: state.user.user,
-        auth: state.user.auth,
+        user:      state.user.user,
+        auth:      state.user.auth,
+        showModal: state.projects.addModal
     }
 }
 
@@ -110,8 +118,8 @@ const mapDispatchToProps = dispatch =>{
     return {
         setUser: (user) => dispatch(actions.setUser(user)),
         onUserDataFetch: (id) => dispatch(actions.fetchUserData(id)),
-        onUserProjectsFetch: (id) => dispatch(actions.fetchUserProjects(id))
-
+        onUserProjectsFetch: (id) => dispatch(actions.fetchUserProjects(id)),
+        turnOffModal: () => dispatch(actions.openAddProjectModal(false))
     }
 }
 

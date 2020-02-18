@@ -33,7 +33,7 @@ const initialState ={
     ],
     activeProject: null,
     limit: 5,
-    addModal: false
+    addModal: true
 }
 
 const setActiveProject = (state,action) =>{
