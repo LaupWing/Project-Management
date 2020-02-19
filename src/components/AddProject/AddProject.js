@@ -2,11 +2,14 @@ import React from 'react'
 import styles from './AddProject.module.css'
 import Button from '../UI/Button/Button'
 import Color from 'color'
+import validateColor from 'validate-color'
 
 export default props =>{
     const [title, setTitle] = React.useState('')
     const [description, setDescription] = React.useState('')
     const [color, setColor] = React.useState('')
+    const [bgState, setBgState] = React.useState('')
+    const [bgGradientState, setBgGradientState] = React.useState('')
 
     const handleSubmit = (e)=>{
         e.preventDefault()
@@ -19,8 +22,12 @@ export default props =>{
             .join(' ')
             : name[0]
     }
-    const createBG = (hex) =>{
-        const color = Color(hex)
+    const createBG = (input) =>{
+        if(!validateColor(input)){
+            console.log('invalid')
+            return
+        }
+        const color = Color(input)
         const randomGrade = Math.floor(Math.random() * 360) + 1
         setBgState(color.hex())
         setBgGradientState(`linear-gradient(${randomGrade}deg, ${color.hsl().hex()} 0%, ${color.hsl().rotate(-30).hex()} 100%)`)
@@ -42,12 +49,20 @@ export default props =>{
             <div 
                 className={styles.fieldColor}
                 value={color}
-                onChange={(e)=>setColor(e.target.value)}
+                onChange={(e)=>{
+                    setColor(e.target.value)
+                    createBG(e.target.value)
+                }}
             >
                 <div className={styles.colorPreview}>
                     {title === '' || color === '' 
                         ?   <p>Icon Preview</p>
-                        :   <div>
+                        :   <div
+                                style={{
+                                    backgroundColor: bgState,
+                                    background: bgGradientState
+                                }}
+                            >
                                 <p>{abbreviation(title)}</p>
                             </div>
                     }
