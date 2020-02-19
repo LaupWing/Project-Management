@@ -1,5 +1,6 @@
 .AddProject{
-
+    display: flex;
+    flex-direction: column;
 }
 .title{
     font-size: 2.5rem;
@@ -7,4 +8,10 @@
 }
 .title::placeholder{
     color: rgba(0,0,0,.2);
+}
+.AddProject textarea{
+    resize: none;
+    padding: 10px;
+    background-color: rgba(0,0,0,.2);
+    height: 200px;
 }
