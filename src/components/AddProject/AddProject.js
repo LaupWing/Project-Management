@@ -13,7 +13,6 @@ export default props =>{
 
     const handleSubmit = (e)=>{
         e.preventDefault()
-        console.log(e)
     }
     const abbreviation = (name)=>{
         return name.includes(' ') ? name
@@ -24,10 +23,9 @@ export default props =>{
     }
     const createBG = (input) =>{
         if(!validateColor(input)){
-            console.log('invalid')
             return
         }
-        const color = Color(input)
+        const color = Color(input.toLowerCase())
         const randomGrade = Math.floor(Math.random() * 360) + 1
         setBgState(color.hex())
         setBgGradientState(`linear-gradient(${randomGrade}deg, ${color.hsl().hex()} 0%, ${color.hsl().rotate(-30).hex()} 100%)`)
@@ -58,6 +56,7 @@ export default props =>{
                     {title === '' || color === '' 
                         ?   <p>Icon Preview</p>
                         :   <div
+                                className={styles.preview}
                                 style={{
                                     backgroundColor: bgState,
                                     background: bgGradientState

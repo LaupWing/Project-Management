@@ -49,3 +49,19 @@
 .colorPreview p{
     opacity: .5;
 }
+
+.preview{
+    color: white;
+    text-transform: uppercase;
+    width: 90%;
+    height: 90%;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.preview p{
+    opacity: 1;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
