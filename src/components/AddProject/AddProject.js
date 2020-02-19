@@ -9,6 +9,7 @@ export default props =>{
 
     const handleSubmit = (e)=>{
         e.preventDefault()
+        console.log(e)
     }
     return(
         <form onSubmit={handleSubmit} className={styles.AddProject}>
@@ -30,7 +31,10 @@ export default props =>{
                 onChange={(e)=>setColor(e.target.value)}
             >
                 <div className={styles.colorPreview}>
-                    <p>Icon Preview</p>
+                    {title === '' || color === '' 
+                        ? <p>Icon Preview</p>
+                        : <p>{title}</p>
+                    }
                 </div>
                 <input type="text" placeholder="Color"></input>
             </div>
