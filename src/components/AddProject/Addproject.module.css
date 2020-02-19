@@ -1,6 +1,7 @@
 .AddProject{
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 .title{
     font-size: 2.5rem;
