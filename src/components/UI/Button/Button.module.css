@@ -1,12 +1,13 @@
 .Button{
     background: var(--button-color);
     color: var(--contrast-color);
-    padding: 5px 10px;
+    padding: 5px 15px;
     text-transform: uppercase;
     cursor: pointer;
     transition: all .25s ease-in;
     position: relative;
     overflow: hidden;
+    border-radius: 20px;
 }
 .switch-auth{
     width: 100px;
@@ -30,7 +31,6 @@
     padding: 10px 15px;
 }
 .addProject{
-    border-radius: 20px;
     margin-left: 10px;
 }
 
