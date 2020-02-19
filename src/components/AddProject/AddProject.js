@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './AddProject.module.css'
 import Button from '../UI/Button/Button'
+import Color from 'color'
 
 export default props =>{
     const [title, setTitle] = React.useState('')
@@ -10,6 +11,19 @@ export default props =>{
     const handleSubmit = (e)=>{
         e.preventDefault()
         console.log(e)
+    }
+    const abbreviation = (name)=>{
+        return name.includes(' ') ? name
+            .split(' ')
+            .map(word=>word[0])
+            .join(' ')
+            : name[0]
+    }
+    const createBG = (hex) =>{
+        const color = Color(hex)
+        const randomGrade = Math.floor(Math.random() * 360) + 1
+        setBgState(color.hex())
+        setBgGradientState(`linear-gradient(${randomGrade}deg, ${color.hsl().hex()} 0%, ${color.hsl().rotate(-30).hex()} 100%)`)
     }
     return(
         <form onSubmit={handleSubmit} className={styles.AddProject}>
@@ -32,8 +46,10 @@ export default props =>{
             >
                 <div className={styles.colorPreview}>
                     {title === '' || color === '' 
-                        ? <p>Icon Preview</p>
-                        : <p>{title}</p>
+                        ?   <p>Icon Preview</p>
+                        :   <div>
+                                <p>{abbreviation(title)}</p>
+                            </div>
                     }
                 </div>
                 <input type="text" placeholder="Color"></input>
