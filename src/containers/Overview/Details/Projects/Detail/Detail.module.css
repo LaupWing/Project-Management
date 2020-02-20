@@ -10,7 +10,11 @@
 .content{
     padding: 5% 10%;
 }
-
 .content h2{
     font-size: 2em;
+}
+.content p{
+    margin-top: 10px;
+    color: var(--white-contrast);
+    font-weight: bold;
 }

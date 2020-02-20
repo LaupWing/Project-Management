@@ -3,6 +3,7 @@
     --lighter-base-color: #3B3F54;
     --contrast-color: white;
     --highlight-color: rgba(255, 255, 255, 0.4);
+    --white-contrast: rgba(0, 0, 0, 0.3);
     --button-color: #894EC8;
     --succes-color: #3FD6D5;
     --warning-color: red;

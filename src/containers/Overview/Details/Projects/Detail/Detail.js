@@ -13,6 +13,7 @@ export default props =>{
             </nav>
             <div className={styles.content}>
                 <h2>{props.project.name}</h2>
+                <p>{props.project.description}</p>
             </div>
         </div>
     )
