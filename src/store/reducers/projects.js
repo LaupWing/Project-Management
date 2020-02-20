@@ -4,31 +4,38 @@ const initialState ={
     projects: [
         {
             name: 'Test',
-            color:  '#08CDE8'
+            color:  '#08CDE8',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut posuere eleifend arcu, ut posuere erat rhoncus et. Donec iaculis, tellus pellentesque iaculis elementum, nibh ipsum faucibus tortor, in auctor ipsum ipsum a elit.'
         },
         {
             name: 'Test2',
-            color: '#FF00FF'
+            color: '#FF00FF',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut posuere eleifend arcu, ut posuere erat rhoncus et. Donec iaculis, tellus pellentesque iaculis elementum, nibh ipsum faucibus tortor, in auctor ipsum ipsum a elit.'
         },
         {
             name: 'Test Test',
-            color: '#FF00FF'
+            color: '#FF00FF',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut posuere eleifend arcu, ut posuere erat rhoncus et. Donec iaculis, tellus pellentesque iaculis elementum, nibh ipsum faucibus tortor, in auctor ipsum ipsum a elit.'
         },
         {
             name: 'Test Test Test',
-            color: '#FF00FF'
+            color: '#FF00FF',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut posuere eleifend arcu, ut posuere erat rhoncus et. Donec iaculis, tellus pellentesque iaculis elementum, nibh ipsum faucibus tortor, in auctor ipsum ipsum a elit.'
         },
         {
             name: 'Test2',
-            color: '#FF00FF'
+            color: '#FF00FF',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut posuere eleifend arcu, ut posuere erat rhoncus et. Donec iaculis, tellus pellentesque iaculis elementum, nibh ipsum faucibus tortor, in auctor ipsum ipsum a elit.'
         },
         {
             name: 'Test Test',
-            color: '#FF00FF'
+            color: '#FF00FF',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut posuere eleifend arcu, ut posuere erat rhoncus et. Donec iaculis, tellus pellentesque iaculis elementum, nibh ipsum faucibus tortor, in auctor ipsum ipsum a elit.'
         },
         {
             name: 'Test Test Test',
-            color: '#FF00FF'
+            color: '#FF00FF',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut posuere eleifend arcu, ut posuere erat rhoncus et. Donec iaculis, tellus pellentesque iaculis elementum, nibh ipsum faucibus tortor, in auctor ipsum ipsum a elit.'
         }
     ],
     activeProject: null,

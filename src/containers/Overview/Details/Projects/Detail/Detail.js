@@ -11,7 +11,9 @@ export default props =>{
                     </g>
                 </svg>
             </nav>
-            <h2>{props.project.name}</h2>
+            <div className={styles.content}>
+                <h2>{props.project.name}</h2>
+            </div>
         </div>
     )
 }

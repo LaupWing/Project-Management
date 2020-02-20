@@ -6,3 +6,11 @@
 .Detail svg polygon{
     fill: var(--contrast-color);
 }
+
+.content{
+    padding: 5% 10%;
+}
+
+.content h2{
+    font-size: 2em;
+}
