@@ -11,6 +11,10 @@ export default props =>{
                         <polygon points="46 6.73 22.93 6.73 22.93 0 0 13 22.93 26 22.93 19.27 46 19.27 46 6.73"/>
                     </g>
                 </svg>
+                <li className={styles.active}>Today</li>
+                <li>Progression</li>
+                <li>Skills</li>
+                <li>Settings</li>
             </nav>
             <div className={styles.content}>
                 <h2>{props.project.name}</h2>

@@ -1,12 +1,34 @@
 .Detail svg{
     width: 70px;
     background: var(--button-color);
-    padding: 5px 15px;
+    padding: 10px 25px;
 }
 .Detail svg polygon{
     fill: var(--contrast-color);
+    border-right: var(--contrast-color) 2px solid;
 }
 
+.Detail nav{
+    display: flex;
+    padding-right: 20px;
+    background: var(--button-color);
+}
+.Detail nav li{
+    padding: 0 15px;
+    background: var(--button-color);
+    color: var(--contrast-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.Detail nav li:hover{
+    opacity: .7;
+}
+.Detail nav .active{
+    background: var(--contrast-color);
+    color: var(--button-color);
+}
 .content{
     padding: 5% 10%;
 }
