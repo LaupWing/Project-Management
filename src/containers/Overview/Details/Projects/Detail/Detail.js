@@ -23,9 +23,15 @@ export default props =>{
                 return task
             }
         })
-        console.log(filterOut)
+        return filterOut
     }
-    getTodayTasks()
+
+    const tasks = getTodayTasks().map((task,i)=>
+        (
+            <div key={i}>{task.title}</div>
+        ))
+        
+
     return(
         <div className={styles.Detail}>
             <nav>
@@ -47,6 +53,7 @@ export default props =>{
                         <h3>Today</h3>
                         <More/>
                     </div>
+                    {tasks}
                 </div>
             </div>
         </div>
