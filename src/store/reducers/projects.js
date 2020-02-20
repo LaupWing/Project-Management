@@ -35,6 +35,16 @@ const initialState ={
                     date:'Thu Feb 20 2020 16:08:00 GMT+0100 (Midden-Europese standaardtijd)',
                     task:'Test Test',
                     completed: false
+                },
+                {
+                    date:'Thu Feb 20 2020 16:08:00 GMT+0100 (Midden-Europese standaardtijd)',
+                    task:'Test Test2',
+                    completed: false
+                },
+                {
+                    date:'Thu Feb 19 2020 16:08:00 GMT+0100 (Midden-Europese standaardtijd)',
+                    task:'Test Test3',
+                    completed: false
                 }
             ]
         },

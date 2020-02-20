@@ -3,6 +3,29 @@ import styles from './Detail.module.css'
 import More from '../../../../../components/UI/More/More'
 
 export default props =>{
+    const getTodayTasks = ()=>{
+        const date = new Date()
+        const day = date.getDate()
+        const month = date.getMonth()
+        const year = date.getFullYear()
+        
+        const filterOut = props.project.tasks.filter(task=>{
+            const taskDate = new Date(task.date)
+            const taskDay = taskDate.getDate()
+            const taskMonth = taskDate.getMonth()
+            const taskyear = taskDate.getFullYear()
+            
+            if(
+                taskDay === day &&
+                taskMonth === month &&
+                taskyear === year
+            ){
+                return task
+            }
+        })
+        console.log(filterOut)
+    }
+    getTodayTasks()
     return(
         <div className={styles.Detail}>
             <nav>
