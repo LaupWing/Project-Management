@@ -5,37 +5,86 @@ const initialState ={
         {
             name: 'Test',
             color:  '#08CDE8',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut posuere eleifend arcu, ut posuere erat rhoncus et. Donec iaculis.'
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut posuere eleifend arcu, ut posuere erat rhoncus et. Donec iaculis.',
+            tasks: [
+                {
+                    date:'Thu Feb 20 2020 16:08:00 GMT+0100 (Midden-Europese standaardtijd)',
+                    task:'Test',
+                    completed: false
+                }
+            ]
         },
         {
             name: 'Test2',
             color: '#FF00FF',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut posuere eleifend arcu, ut posuere erat rhoncus et. Donec iaculis.'
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut posuere eleifend arcu, ut posuere erat rhoncus et. Donec iaculis.',
+            tasks: [
+                {
+                    date:'Thu Feb 20 2020 16:08:00 GMT+0100 (Midden-Europese standaardtijd)',
+                    task:'Test2',
+                    completed: false
+                }
+            ]
         },
         {
             name: 'Test Test',
             color: '#FF00FF',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut posuere eleifend arcu, ut posuere erat rhoncus et. Donec iaculis.'
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut posuere eleifend arcu, ut posuere erat rhoncus et. Donec iaculis.',
+            tasks: [
+                {
+                    date:'Thu Feb 20 2020 16:08:00 GMT+0100 (Midden-Europese standaardtijd)',
+                    task:'Test Test',
+                    completed: false
+                }
+            ]
         },
         {
             name: 'Test Test Test',
             color: '#FF00FF',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut posuere eleifend arcu, ut posuere erat rhoncus et. Donec iaculis.'
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut posuere eleifend arcu, ut posuere erat rhoncus et. Donec iaculis.',
+            tasks: [
+                {
+                    date:'Thu Feb 20 2020 16:08:00 GMT+0100 (Midden-Europese standaardtijd)',
+                    task:'Test Test Test',
+                    completed: false
+                }
+            ]
         },
         {
             name: 'Test2',
             color: '#FF00FF',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut posuere eleifend arcu, ut posuere erat rhoncus et. Donec iaculis.'
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut posuere eleifend arcu, ut posuere erat rhoncus et. Donec iaculis.',
+            tasks: [
+                {
+                    date:'Thu Feb 20 2020 16:08:00 GMT+0100 (Midden-Europese standaardtijd)',
+                    task:'Test2',
+                    completed: false
+                }
+            ]
         },
         {
             name: 'Test Test',
             color: '#FF00FF',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut posuere eleifend arcu, ut posuere erat rhoncus et. Donec iaculis.'
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut posuere eleifend arcu, ut posuere erat rhoncus et. Donec iaculis.',
+            tasks: [
+                {
+                    date:'Thu Feb 20 2020 16:08:00 GMT+0100 (Midden-Europese standaardtijd)',
+                    task:'Test Test',
+                    completed: false
+                }
+            ]
         },
         {
             name: 'Test Test Test',
             color: '#FF00FF',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut posuere eleifend arcu, ut posuere erat rhoncus et. Donec iaculis.'
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut posuere eleifend arcu, ut posuere erat rhoncus et. Donec iaculis.',
+            tasks: [
+                {
+                    date:'Thu Feb 20 2020 16:08:00 GMT+0100 (Midden-Europese standaardtijd)',
+                    task:'Test Test Test',
+                    completed: false
+                }
+            ]
         }
     ],
     activeProject: null,
