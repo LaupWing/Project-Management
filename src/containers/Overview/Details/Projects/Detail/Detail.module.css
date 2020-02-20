@@ -18,3 +18,10 @@
     color: var(--white-contrast);
     font-weight: bold;
 }
+
+.Detail .info{
+    margin-top: 40px;
+    border-bottom: var(--grey-border) solid 2px;
+    padding: 5px;
+    padding-bottom: 15px;
+}
