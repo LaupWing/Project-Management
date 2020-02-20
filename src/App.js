@@ -73,6 +73,7 @@ class App extends Component {
         return (
             <div className={classes.App}>
                 {this.props.user === null ? <Redirect to='/auth'/>:null}
+                {bgItems}
                 <main>
                     <section 
                         className={classes['white-section']} 
@@ -101,7 +102,6 @@ class App extends Component {
                 >
                     {this.props.showModal ? <AddProject/> : ''}
                 </Modal>
-                {bgItems}
             </div>
         )
     }
