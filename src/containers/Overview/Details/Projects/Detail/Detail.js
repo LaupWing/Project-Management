@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './Detail.module.css'
+import More from '../../../../../components/UI/More/More'
 
 export default props =>{
     return(
@@ -17,6 +18,7 @@ export default props =>{
                 <div className={styles.today}>
                     <div className={styles.info}>
                         <h3>Today</h3>
+                        <More/>
                     </div>
                 </div>
             </div>

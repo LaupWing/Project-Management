@@ -24,4 +24,7 @@
     border-bottom: var(--grey-border) solid 2px;
     padding: 5px;
     padding-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

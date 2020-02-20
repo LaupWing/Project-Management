@@ -2,11 +2,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 50px;
+    width: 30px;
+    cursor: pointer;
+    margin-top: 7px;
 }
 
 .circle{
-    width: 15px;
-    height: 15px;
+    width: 7px;
+    height: 7px;
     background-color: var(--white-contrast);
+    border-radius: 50%;
+    transition: .5s all;
+}
+
+.More:hover .circle{
+    background: var(--button-color);
 }
