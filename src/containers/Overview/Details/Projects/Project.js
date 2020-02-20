@@ -9,7 +9,7 @@ class ProjectDetail extends React.Component{
             <div className={styles.ProjectDetail}>
                 {!this.props.activeProject 
                     ?   <h2>Latest project activity</h2>
-                    :   <h2><Detail project={this.props.activeProject}/></h2>
+                    :   <Detail project={this.props.activeProject}/>
                 }
             </div>
         )

@@ -1,0 +1,8 @@
+.Detail svg{
+    width: 70px;
+    background: var(--button-color);
+    padding: 5px 15px;
+}
+.Detail svg polygon{
+    fill: var(--contrast-color);
+}

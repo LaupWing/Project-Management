@@ -1,8 +1,9 @@
 import React from 'react'
+import styles from './Detail.module.css'
 
 export default props =>{
     return(
-        <div>
+        <div className={styles.Detail}>
             <nav>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46 26">
                     <g>

@@ -117,10 +117,10 @@ const mapStateToProps = state =>{
 
 const mapDispatchToProps = dispatch =>{
     return {
-        setUser: (user) => dispatch(actions.setUser(user)),
-        onUserDataFetch: (id) => dispatch(actions.fetchUserData(id)),
+        setUser:             (user) => dispatch(actions.setUser(user)),
+        onUserDataFetch:     (id) => dispatch(actions.fetchUserData(id)),
         onUserProjectsFetch: (id) => dispatch(actions.fetchUserProjects(id)),
-        turnOffModal: () => dispatch(actions.openAddProjectModal(false))
+        turnOffModal:        () => dispatch(actions.openAddProjectModal(false))
     }
 }
 

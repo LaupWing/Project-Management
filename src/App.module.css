@@ -26,6 +26,7 @@
 section.white-section{
     background: var(--contrast-color);
     border-radius: 20px;
+    overflow: hidden;
 }
 section.transparent-section{
     color: var(--higlight-color);
