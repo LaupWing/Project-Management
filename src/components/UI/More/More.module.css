@@ -1,0 +1,12 @@
+.More{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50px;
+}
+
+.circle{
+    width: 15px;
+    height: 15px;
+    background-color: var(--white-contrast);
+}
