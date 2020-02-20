@@ -1,13 +1,25 @@
 import React from 'react'
 import styles from './Project.module.css'
+import {connect} from 'react-redux'
+import Detail from './Detail/Detail'
+
 class ProjectDetail extends React.Component{
     render(){
         return(
             <div className={styles.ProjectDetail}>
-                <h2>Latest project activity</h2>
+                {!this.props.activeProject 
+                    ?   <h2>Latest project activity</h2>
+                    :   <h2><Detail project={this.props.activeProject}/></h2>
+                }
             </div>
         )
     }
 }
 
-export default ProjectDetail 
+const mapStateToProps = (state)=>{
+    return{
+        activeProject: state.projects.activeProject
+    }
+}
+
+export default connect(mapStateToProps)(ProjectDetail) 
