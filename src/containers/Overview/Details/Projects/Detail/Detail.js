@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './Detail.module.css'
 import More from '../../../../../components/UI/More/More'
+import Checkbox from '../../../../../components/UI/Checkbox/Checkbox'
 
 export default props =>{
     const getTodayTasks = ()=>{
@@ -26,10 +27,11 @@ export default props =>{
         return filterOut
     }
 
-    const tasks = getTodayTasks().map((task,i)=>
-        (
-            <div key={i}>{task.title}</div>
-        ))
+    const tasks = getTodayTasks().map((task,i)=>{
+        return (
+            <div className={styles.task} key={i}><Checkbox name={task.task}/></div>
+        )
+    })
         
 
     return(

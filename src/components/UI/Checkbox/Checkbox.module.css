@@ -1,6 +1,7 @@
 /* The container */
 .container {
-    display: block;
+    display: flex;
+    align-items: center;
     position: relative;
     padding-left: 35px;
     margin-bottom: 12px;
@@ -10,6 +11,7 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    color: var(--white-contrast);
   }
   
   /* Hide the browser's default checkbox */
@@ -24,11 +26,12 @@
   /* Create a custom checkbox */
   .checkmark {
     position: absolute;
-    top: 0;
+    top: 2px;
     left: 0;
     height: 25px;
     width: 25px;
     background-color: #eee;
+    border-radius: 50%;
   }
   
   /* On mouse-over, add a grey background color */
@@ -38,7 +41,7 @@
   
   /* When the checkbox is checked, add a blue background */
   .container input:checked ~ .checkmark {
-    background-color: #2196F3;
+    background-color: var(--succes-color);
     border-radius: 50%;
   }
   
@@ -65,4 +68,9 @@
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+  }
+
+  .container p{
+      margin-top: 0;
+      font-weight: normal;
   }
