@@ -1,22 +1,18 @@
 .Detail svg{
     width: 70px;
-    background: var(--button-color);
     padding: 10px 25px;
 }
 .Detail svg polygon{
-    fill: var(--contrast-color);
-    border-right: var(--contrast-color) 2px solid;
+    fill: var(--button-color);
 }
 
 .Detail nav{
     display: flex;
     padding-right: 20px;
-    background: var(--button-color);
 }
 .Detail nav li{
     padding: 0 15px;
-    background: var(--button-color);
-    color: var(--contrast-color);
+    color: var(--white-contrast);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,7 +22,7 @@
     opacity: .7;
 }
 .Detail nav .active{
-    background: var(--contrast-color);
+    border-bottom: 2px solid var(--button-color);
     color: var(--button-color);
 }
 .content{
