@@ -28,7 +28,7 @@ export default props =>{
         const color = Color(input.toLowerCase())
         const randomGrade = Math.floor(Math.random() * 360) + 1
         setBgState(color.hex())
-        setBgGradientState(`linear-gradient(${randomGrade}deg, ${color.hsl().hex()} 0%, ${color.hsl().rotate(-50).hex()} 100%)`)
+        setBgGradientState(`linear-gradient(${randomGrade}deg, ${color.hsl().hex()} 0%, ${color.hsl().rotate(-30).hex()} 100%)`)
     }
     return(
         <form onSubmit={handleSubmit} className={styles.AddProject}>
