@@ -1,11 +1,19 @@
 .Detail svg{
     width: 70px;
     padding: 10px 25px;
+    transition: .5s all;
+    cursor: pointer;
 }
 .Detail svg polygon{
     fill: var(--button-color);
+    transition: .5s all;
 }
-
+.Detail svg:hover{
+    background-color: var(--button-color);
+}
+.Detail svg:hover polygon{
+    fill: var(--contrast-color);
+}
 .Detail nav{
     display: flex;
     padding-right: 20px;
@@ -17,9 +25,11 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    transition: .5s;
 }
 .Detail nav li:hover{
     opacity: .7;
+    color: var(--button-color);
 }
 .Detail nav .active{
     border-bottom: 2px solid var(--button-color);
