@@ -11,7 +11,7 @@ class ProjectDetail extends React.Component{
             <div className={styles.ProjectDetail}>
                 <Switch>
                     <Route exact path='/projects' component={Latest}/>
-                    <Route exact path='/projects/:id' component={Detail}/>
+                    <Route path='/projects/:id' component={Detail}/>
                 </Switch>
             </div>
         )
