@@ -2,21 +2,15 @@ import React from 'react'
 import styles from './Project.module.css'
 import Color from 'color'
 import {connect} from 'react-redux'
-import * as actions from '../../../../../../store/actions/index'
 import {NavLink} from 'react-router-dom'
 
-const mapDispatchToProps = dispatch =>{
-    return{
-        setActiveProject: (project) => dispatch(actions.setActiveProject(project))
-    }
-}
 const mapStateToProps = state =>{
     return{
         active: state.projects.activeProject
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)((props)=>{
+export default connect(mapStateToProps)((props)=>{
     const projectEl = React.useRef(null)
     const [bgState, setBgState] = React.useState(null)
     const [heightState, setHeight] = React.useState(null)
@@ -40,9 +34,6 @@ export default connect(mapStateToProps, mapDispatchToProps)((props)=>{
             .map(word=>word[0])
             .join(' ')
             : name[0]
-    }
-    const setProject = ()=>{
-        props.setActiveProject(props.project)
     }
     const bgDeco = (name)=>{
         const letters = name
@@ -68,8 +59,11 @@ export default connect(mapStateToProps, mapDispatchToProps)((props)=>{
         })
     }
     return(
-        <div className={`${styles.container} ${props.active === props.project ? styles.active : ''}`} onClick={setProject}>
-            <NavLink to={`/projects/${props.project.name}`}>
+        <div className={`${styles.container} ${props.active === props.project ? styles.active : ''}`}>
+            <NavLink 
+                to={`/projects/${props.project.name}`}
+                activeClassName={styles.active}
+            >
                 <div 
                     ref={projectEl} 
                     className={`${styles.ProjectWrapper}`}

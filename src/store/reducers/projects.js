@@ -61,7 +61,7 @@ const initialState ={
             ]
         },
         {
-            name: 'Test2',
+            name: 'Test3',
             color: '#FF00FF',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut posuere eleifend arcu, ut posuere erat rhoncus et. Donec iaculis.',
             tasks: [
@@ -73,7 +73,7 @@ const initialState ={
             ]
         },
         {
-            name: 'Test Test',
+            name: 'Test Test2',
             color: '#FF00FF',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut posuere eleifend arcu, ut posuere erat rhoncus et. Donec iaculis.',
             tasks: [
@@ -85,7 +85,7 @@ const initialState ={
             ]
         },
         {
-            name: 'Test Test Test',
+            name: 'Test Test Test2',
             color: '#FF00FF',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut posuere eleifend arcu, ut posuere erat rhoncus et. Donec iaculis.',
             tasks: [
