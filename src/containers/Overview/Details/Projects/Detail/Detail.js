@@ -17,36 +17,35 @@ export default connect(mapStateToProps)(props =>{
         const findProject = props.projects.find(p=>p.name===props.match.params.id)
         setProject(findProject)
     },[props.match.params.id])
-    // const getTodayTasks = ()=>{
-    //     const date = new Date()
-    //     const day = date.getDate()
-    //     const month = date.getMonth()
-    //     const year = date.getFullYear()
-        
-    //     const filterOut = props.project.tasks.filter(task=>{
-    //         const taskDate = new Date(task.date)
-    //         const taskDay = taskDate.getDate()
-    //         const taskMonth = taskDate.getMonth()
-    //         const taskyear = taskDate.getFullYear()
+
+    const getTodayTasks = ()=>{
+        const date = new Date()
+        const day = date.getDate()
+        const month = date.getMonth()
+        const year = date.getFullYear()
+        const filterOut = project.tasks.filter(task=>{
+            const taskDate = new Date(task.date)
+            const taskDay = taskDate.getDate()
+            const taskMonth = taskDate.getMonth()
+            const taskyear = taskDate.getFullYear()
             
-    //         if(
-    //             taskDay === day &&
-    //             taskMonth === month &&
-    //             taskyear === year
-    //         ){
-    //             return task
-    //         }
-    //     })
-    //     return filterOut
-    // }
+            if(
+                taskDay === day &&
+                taskMonth === month &&
+                taskyear === year
+            ){
+                return task
+            }
+        })
+        return filterOut
+    }
 
-    // const tasks = getTodayTasks().map((task,i)=>{
-    //     return (
-    //         <div className={styles.task} key={i}><Checkbox name={task.task}/></div>
-    //     )
-    // })
+    const tasks = ()=> getTodayTasks().map((task,i)=>{
+        return (
+            <div className={styles.task} key={i}><Checkbox name={task.task}/></div>
+        )
+    })
         
-
     return(
         <div className={styles.Detail}>
             <nav>
@@ -69,7 +68,7 @@ export default connect(mapStateToProps)(props =>{
                                 <h3>Today</h3>
                                 <More/>
                             </div>
-                            
+                            {tasks()}
                         </div>
                     </div>
                 :   null}
