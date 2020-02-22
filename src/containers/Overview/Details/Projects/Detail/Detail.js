@@ -3,6 +3,7 @@ import styles from './Detail.module.css'
 import More from '../../../../../components/UI/More/More'
 import Checkbox from '../../../../../components/UI/Checkbox/Checkbox'
 import {connect} from 'react-redux'
+import {NavLink} from 'react-router-dom'
 
 const mapStateToProps = (state)=>{
     return {
@@ -16,6 +17,7 @@ export default connect(mapStateToProps)(props =>{
     useEffect(()=>{
         const findProject = props.projects.find(p=>p.name===props.match.params.id)
         setProject(findProject)
+        console.log(props)
     },[props.match.params.id])
 
     const getTodayTasks = ()=>{
@@ -49,12 +51,18 @@ export default connect(mapStateToProps)(props =>{
     return(
         <div className={styles.Detail}>
             <nav>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46 26">
-                    <g>
-                        <polygon points="46 6.73 22.93 6.73 22.93 0 0 13 22.93 26 22.93 19.27 46 19.27 46 6.73"/>
-                    </g>
-                </svg>
-                <li className={styles.active}>Today</li>
+                <NavLink to="/projects">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46 26">
+                        <g>
+                            <polygon points="46 6.73 22.93 6.73 22.93 0 0 13 22.93 26 22.93 19.27 46 19.27 46 6.73"/>
+                        </g>
+                    </svg>
+                </NavLink>
+                <li className={styles.active}>
+                    <NavLink exact to={`/projects/${props.match.params.id}`}>
+                        Today
+                    </NavLink>
+                </li>
                 <li>Progression</li>
                 <li>Skills</li>
                 <li>Settings</li>
