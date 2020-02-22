@@ -63,7 +63,12 @@ export default connect(mapStateToProps)(props =>{
                         Today
                     </NavLink>
                 </li>
-                <li>Progression</li>
+
+                <li>
+                    <NavLink exact to={`/projects/${props.match.params.id}/progression`}>
+                        Progression
+                    </NavLink>
+                </li>
                 <li>Skills</li>
                 <li>Settings</li>
             </nav>
