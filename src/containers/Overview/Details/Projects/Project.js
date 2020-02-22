@@ -10,13 +10,9 @@ class ProjectDetail extends React.Component{
         return(
             <div className={styles.ProjectDetail}>
                 <Switch>
-                    <Route exact path='/projects/:id' component={Latest}/>
+                    <Route exact path='/projects' component={Latest}/>
+                    <Route exact path='/projects/:id' component={Detail}/>
                 </Switch>
-                <h2>Test</h2>
-                {/* {!this.props.activeProject 
-                    ?   <Latest/>
-                    :   <Detail project={this.props.activeProject}/>
-                } */}
             </div>
         )
     }

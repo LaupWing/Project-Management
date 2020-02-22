@@ -5,7 +5,8 @@
     cursor: pointer;
 }
 
-.container:hover{
+.container:hover .Project,
+.container:hover p{
     opacity: 1;
 }
 .ProjectWrapper{
@@ -18,7 +19,7 @@
 .container p,
 .Project{
     opacity: .5;
-    transition: opaciyt .5s;
+    transition: opacity .5s;
 }
 .active + p,
 .active .Project{
@@ -64,6 +65,7 @@
     left: 0;
     overflow: hidden;
     border-radius: 15px;
+    opacity: .4;
 }
 
 .backgroundLetter{
