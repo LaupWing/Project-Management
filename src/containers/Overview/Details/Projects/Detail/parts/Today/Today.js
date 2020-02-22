@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './Today.module.css'
-
+import More from '../../../../../../../components/UI/More/More'
 export default props =>{
     const getTodayTasks = ()=>{
         const date = new Date()

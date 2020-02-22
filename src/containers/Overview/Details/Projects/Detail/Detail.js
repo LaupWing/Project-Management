@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react'
 import styles from './Detail.module.css'
-import More from '../../../../../components/UI/More/More'
 import Checkbox from '../../../../../components/UI/Checkbox/Checkbox'
 import {connect} from 'react-redux'
 import {NavLink} from 'react-router-dom'
@@ -74,7 +73,7 @@ export default connect(mapStateToProps)(props =>{
             </nav>
             {project 
                 ?   <div className={styles.content}>
-                        <h2>{project.name}</h2>
+                        {/* <h2>{project.name}</h2>
                         <p>{project.description}</p>
                         <div className={styles.today}>
                             <div className={styles.info}>
@@ -82,7 +81,8 @@ export default connect(mapStateToProps)(props =>{
                                 <More/>
                             </div>
                             {tasks()}
-                        </div>
+                        </div> */}
+
                     </div>
                 :   null}
         </div>
