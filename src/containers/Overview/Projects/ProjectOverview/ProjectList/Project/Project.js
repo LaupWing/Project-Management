@@ -3,6 +3,7 @@ import styles from './Project.module.css'
 import Color from 'color'
 import {connect} from 'react-redux'
 import * as actions from '../../../../../../store/actions/index'
+import {NavLink} from 'react-router-dom'
 
 const mapDispatchToProps = dispatch =>{
     return{
@@ -68,26 +69,28 @@ export default connect(mapStateToProps, mapDispatchToProps)((props)=>{
     }
     return(
         <div className={`${styles.container} ${props.active === props.project ? styles.active : ''}`} onClick={setProject}>
-            <div 
-                ref={projectEl} 
-                className={`${styles.ProjectWrapper}`}
-                style={{
-                    height: heightState,
-                }}
-            >
+            <NavLink to={`/projects/${props.project.name}`}>
                 <div 
-                    className={styles.Project}
+                    ref={projectEl} 
+                    className={`${styles.ProjectWrapper}`}
                     style={{
-                        backgroundColor: bgState,
-                        background: bgGradientState
+                        height: heightState,
                     }}
                 >
-                    <div className={styles.bgContainer}>
-                        {bgDeco(props.project.name)}
-                    </div>
-                    <h1>{abbreviation(props.project.name)}</h1>
+                        <div 
+                            className={styles.Project}
+                            style={{
+                                backgroundColor: bgState,
+                                background: bgGradientState
+                            }}
+                        >
+                            <div className={styles.bgContainer}>
+                                {bgDeco(props.project.name)}
+                            </div>
+                            <h1>{abbreviation(props.project.name)}</h1>
+                        </div>
                 </div>
-            </div>
+            </NavLink>
             <p>{props.project.name}</p>
         </div>
     )

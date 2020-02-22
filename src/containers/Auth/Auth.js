@@ -38,7 +38,7 @@ class Auth extends React.Component{
     render(){
         return(
             <div className={classes.Auth}>
-                {this.props.user ? <Redirect to='/'/>:null}
+                {this.props.user ? <Redirect to='/projects'/>:null}
                 <h1 onClick={()=>console.log(this.props.user)}>Welcome!</h1>
                 <nav>
                     <Button 

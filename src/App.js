@@ -52,12 +52,12 @@ class App extends Component {
             <Switch>
                 <Route path='/auth' component={Auth}/>
                 <Route path='/auth' component={Overview}/>
-                <Route exact path='/' component={ProjectDetails}/>
+                <Route path='/projects' component={ProjectDetails}/>
             </Switch>
         )
         const routesTransparent = (
             <Switch>
-                <Route exact path='/' component={Projects}/>
+                <Route path='/projects' component={Projects}/>
             </Switch>
         )
         const components ={
