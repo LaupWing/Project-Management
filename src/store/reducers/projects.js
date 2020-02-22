@@ -32,12 +32,12 @@ const initialState ={
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut posuere eleifend arcu, ut posuere erat rhoncus et. Donec iaculis.',
             tasks: [
                 {
-                    date:'Thu Feb 20 2020 16:08:00 GMT+0100 (Midden-Europese standaardtijd)',
+                    date:'Thu Feb 22 2020 16:08:00 GMT+0100 (Midden-Europese standaardtijd)',
                     task:'Test Test',
                     completed: false
                 },
                 {
-                    date:'Thu Feb 20 2020 16:08:00 GMT+0100 (Midden-Europese standaardtijd)',
+                    date:'Thu Feb 22 2020 16:08:00 GMT+0100 (Midden-Europese standaardtijd)',
                     task:'Test Test2',
                     completed: false
                 },

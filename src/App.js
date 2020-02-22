@@ -38,7 +38,6 @@ class App extends Component {
             this.props.setUser(user)
             if(user){
                 this.props.onUserDataFetch(user.uid)
-                // this.props.onUserProjectsFetch(user.uid)
             }
         })
         const sectionWidth = document.querySelector('section').offsetWidth
