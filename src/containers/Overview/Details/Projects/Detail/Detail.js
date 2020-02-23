@@ -2,7 +2,12 @@ import React, {useEffect, useState} from 'react'
 import styles from './Detail.module.css'
 import Checkbox from '../../../../../components/UI/Checkbox/Checkbox'
 import {connect} from 'react-redux'
-import {NavLink} from 'react-router-dom'
+import {NavLink,Switch,Route} from 'react-router-dom'
+
+import Today from './parts/Today/Today'
+import Progression from './parts/Progression'
+import Settings from './parts/Settings'
+import Skills from './parts/Skills'
 
 const mapStateToProps = (state)=>{
     return {
@@ -82,6 +87,12 @@ export default connect(mapStateToProps)(props =>{
                             </div>
                             {tasks()}
                         </div> */}
+                        <Switch>
+                            <Route path="/projects/:id" component={Today}/>
+                            <Route path="/projects/:id/progression" component={Progression}/>
+                            <Route path="/projects/:id/skills" component={Skills}/>
+                            <Route path="/projects/:id/settings" component={Settings}/>
+                        </Switch>
 
                     </div>
                 :   null}
