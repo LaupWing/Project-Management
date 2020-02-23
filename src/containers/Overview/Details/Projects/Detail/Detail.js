@@ -88,7 +88,10 @@ export default connect(mapStateToProps)(props =>{
                             {tasks()}
                         </div> */}
                         <Switch>
-                            <Route path="/projects/:id" component={Today}/>
+                            <Route 
+                                path="/projects/:id" 
+                                render={(props)=><Today project={project} {...props}/>}
+                            />
                             <Route path="/projects/:id/progression" component={Progression}/>
                             <Route path="/projects/:id/skills" component={Skills}/>
                             <Route path="/projects/:id/settings" component={Settings}/>

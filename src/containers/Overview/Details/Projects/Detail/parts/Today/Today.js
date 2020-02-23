@@ -1,13 +1,15 @@
 import React from 'react'
 import styles from './Today.module.css'
 import More from '../../../../../../../components/UI/More/More'
+import Checkbox from '../../../../../../../components/UI/Checkbox/Checkbox'
 export default props =>{
+    React.useEffect(()=>console.log(props))
     const getTodayTasks = ()=>{
         const date = new Date()
         const day = date.getDate()
         const month = date.getMonth()
         const year = date.getFullYear()
-        const filterOut = project.tasks.filter(task=>{
+        const filterOut = props.project.tasks.filter(task=>{
             const taskDate = new Date(task.date)
             const taskDay = taskDate.getDate()
             const taskMonth = taskDate.getMonth()
@@ -31,7 +33,7 @@ export default props =>{
     })
     return(
         <React.Fragment>
-            <h2>{props.project.name}</h2>
+            {/* <h2>{props.project.name}</h2>
             <p>{props.project.description}</p>
             <div className={styles.today}>
                 <div className={styles.info}>
@@ -39,7 +41,7 @@ export default props =>{
                     <More/>
                 </div>
                 {tasks()}
-            </div>
+            </div> */}
         </React.Fragment>
     )
 }
