@@ -43,13 +43,22 @@ export default connect(mapStateToProps)(props =>{
                         Progression
                     </NavLink>
                 </li>
-                <li>Skills</li>
-                <li>Settings</li>
+                <li>
+                    <NavLink exact to={`/projects/${props.match.params.id}/skills`}>
+                        Skills
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink exact to={`/projects/${props.match.params.id}/settings`}>
+                        Settings
+                    </NavLink>
+                </li>
             </nav>
             {project 
                 ?   <div className={styles.content}>
                         <Switch>
                             <Route 
+                                exact
                                 path="/projects/:id" 
                                 render={(props)=><Today project={project} {...props}/>}
                             />
