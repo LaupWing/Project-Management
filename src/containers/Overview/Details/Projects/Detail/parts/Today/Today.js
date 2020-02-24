@@ -38,7 +38,8 @@ export default connect(null, mapDispatchToProps)(props =>{
         return filterOut
     }
 
-    const openPopup = ()=>{
+    const openPopup = (e)=>{
+        const positions = e.currentTarget.getBoundingClientRect()
         props.setPopup({
             type: 'Options',
             data:[
@@ -51,7 +52,8 @@ export default connect(null, mapDispatchToProps)(props =>{
                 {
                     text: 'Uncheck all tasks'
                 }
-            ]
+            ],
+            positions
         })
     }
 
