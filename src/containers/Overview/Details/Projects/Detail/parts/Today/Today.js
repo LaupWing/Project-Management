@@ -3,6 +3,7 @@ import styles from './Today.module.css'
 import More from '../../../../../../../components/UI/More/More'
 import Checkbox from '../../../../../../../components/UI/Checkbox/Checkbox'
 import Delete from '../../../../../../../components/UI/Delete/Delete'
+import Edit from '../../../../../../../components/UI/Edit/Edit'
 
 export default props =>{
     const getTodayTasks = ()=>{
@@ -29,7 +30,11 @@ export default props =>{
 
     const tasks = getTodayTasks().map((task,i)=>{
         return (
-            <div className={styles.task} key={i}><Checkbox name={task.task}/><Delete/></div>
+            <div className={styles.task} key={i}>
+                <Checkbox name={task.task}/>
+                <Delete/>
+                <Edit/>
+            </div>
         )
     })
     return(

@@ -9,7 +9,7 @@
 }
 
 .task{
-    margin: 25px 0;
+    margin: 30px 0;
     display: flex;
     align-items: center;
 }
@@ -19,4 +19,15 @@
 }
 .task svg{
     width: 15px;
+    cursor: pointer;
+}
+.task svg:hover path{
+    opacity: 1;
+}
+.task svg path{
+    transition: .5s all;
+}
+.task svg:last-of-type{
+    margin-left: 10px;
+    width: 18px;
 }
