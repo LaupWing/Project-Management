@@ -38,19 +38,24 @@ export default connect(null, mapDispatchToProps)(props =>{
         return filterOut
     }
 
+    const test = ()=>console.log('it works!')
+
     const openPopup = (e)=>{
         const positions = e.currentTarget.getBoundingClientRect()
         props.setPopup({
             type: 'Options',
             data:[
                 {
-                    text: 'Add new task'
+                    text: 'Add new task',
+                    clicked: test
                 },
                 {
-                    text: 'Check all tasks'
+                    text: 'Check all tasks',
+                    clicked: test
                 },
                 {
-                    text: 'Uncheck all tasks'
+                    text: 'Uncheck all tasks',
+                    clicked: test
                 }
             ],
             positions,
