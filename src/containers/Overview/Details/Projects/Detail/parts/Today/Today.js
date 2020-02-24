@@ -15,7 +15,7 @@ export default props =>{
             text: 'Check all tasks'
         },
         {
-            text: 'Delete all tasks'
+            text: 'Uncheck all tasks'
         }
     ])
 

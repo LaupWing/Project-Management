@@ -1,0 +1,9 @@
+.Option{
+    width: 180px;
+    background: var(--contrast-color);
+    padding: 5px 10px;
+    border-bottom: solid 1px var(--grey-border);
+}
+.Option:last-of-type{
+    border: none;
+}
