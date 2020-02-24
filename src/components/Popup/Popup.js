@@ -1,8 +1,11 @@
 import React from  'react'
 import Backdrop from '../UI/Backdrop/Backdrop'
 
-export default props =>(
-    <React.Fragment>
+export default props =>{
 
-    </React.Fragment>
-)
+    return(
+        <React.Fragment>
+
+        </React.Fragment>
+    )
+}

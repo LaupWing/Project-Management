@@ -16,4 +16,8 @@ export const FETCH_USERPROJECTS_SAGA = 'FETCH_USERPROJECTS_SAGA'
 export const SET_PROJECTS            = 'SET_PROJECTS'
 export const ADD_PROJECT_MODAL  	 = 'ADD_PROJECT_MODAL'
 
+// Error
 export const SET_ERROR = 'SET_ERROR'
+
+// Popup
+export const SET_POPUP = 'SET_POPUP'

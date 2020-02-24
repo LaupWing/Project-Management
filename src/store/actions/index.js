@@ -16,3 +16,6 @@ export{
 export{
     setError
 }from './error'
+export{
+    setPopup
+}from './popup'
