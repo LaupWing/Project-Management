@@ -1,0 +1,4 @@
+.Delete path{
+    fill: var(--button-color);
+    opacity: .3;
+}
