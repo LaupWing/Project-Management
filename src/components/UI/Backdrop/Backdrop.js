@@ -4,10 +4,10 @@ import styles from './Backdrop.module.css'
 export default (props)=>(
     props.show
         ? <div 
-            className={styles['Backdrop'], 
+            className={[styles['Backdrop'], 
                 props.backdropStyle 
                 ? styles[props.backdropStyle]
                 : ''
-            } onClick={props.clicked}>
+            ].join(' ')} onClick={props.clicked}>
     </div>:null
 )
