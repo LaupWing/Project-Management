@@ -11,6 +11,7 @@ import Dots from './components/BackgroundEl/Dots/Dots'
 import firebase from 'firebase'
 import Modal from './components/UI/Modal/Modal'
 import AddProject from './components/AddProject/AddProject'
+import Popup from './components/Popup/Popup'
 
 class App extends Component {
     state={
@@ -101,6 +102,9 @@ class App extends Component {
                 >
                     {this.props.showModal ? <AddProject/> : ''}
                 </Modal>
+                {this.popup
+                ?   <Popup/>
+                :   null}
             </div>
         )
     }
