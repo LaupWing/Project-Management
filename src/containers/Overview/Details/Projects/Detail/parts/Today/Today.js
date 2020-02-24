@@ -43,6 +43,7 @@ export default props =>{
         return filterOut
     }
 
+    const test = ()=>console.log('test')
     const tasks = getTodayTasks().map((task,i)=>{
         return (
             <div className={styles.task} key={i}>
@@ -58,7 +59,7 @@ export default props =>{
                 <div className={styles.info}>
                     <h3>Today</h3>
                     <div className={styles.moreContainer}>
-                        <More/>
+                        <More clicked={test}/>
                     </div>
                 </div>
                 {tasks}
