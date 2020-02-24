@@ -1,32 +1,32 @@
-import React, {useState} from 'react'
+import React from 'react'
 import styles from './Today.module.css'
 import More from '../../../../../../../components/UI/More/More'
 import Checkbox from '../../../../../../../components/UI/Checkbox/Checkbox'
 import Delete from '../../../../../../../components/UI/Delete/Delete'
 import Edit from '../../../../../../../components/UI/Edit/Edit'
-import Options from '../../../../../../../components/UI/Options/Options'
 
 export default props =>{
-    const [options] = useState([
-        {
-            text: 'Add new task'
-        },
-        {
-            text: 'Check all tasks'
-        },
-        {
-            text: 'Uncheck all tasks'
-        }
-    ])
+    // const [options] = useState([
+    //     {
+    //         text: 'Add new task'
+    //     },
+    //     {
+    //         text: 'Check all tasks'
+    //     },
+    //     {
+    //         text: 'Uncheck all tasks'
+    //     }
+    // ])
 
-    const [showOptions, setShowOptions] = useState(true)
+    // const [showOptions, setShowOptions] = useState(true)
 
     const getTodayTasks = ()=>{
         const date = new Date()
         const day = date.getDate()
         const month = date.getMonth()
         const year = date.getFullYear()
-        const filterOut = props.project.tasks.filter(task=>{
+        // eslint-disable-next-line
+        const filterOut =  props.project.tasks.filter(task=>{
             const taskDate = new Date(task.date)
             const taskDay = taskDate.getDate()
             const taskMonth = taskDate.getMonth()
@@ -59,10 +59,6 @@ export default props =>{
                     <h3>Today</h3>
                     <div className={styles.moreContainer}>
                         <More/>
-                        <Options 
-                            options={options}
-                            show={showOptions}
-                        />
                     </div>
                 </div>
                 {tasks}
