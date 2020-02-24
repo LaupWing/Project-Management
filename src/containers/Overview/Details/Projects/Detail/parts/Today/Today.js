@@ -55,7 +55,7 @@ export default props =>{
             <div className={styles.today}>
                 <div className={styles.info}>
                     <h3>Today</h3>
-                    <div>
+                    <div className={styles.moreContainer}>
                         <More/>
                         <Options options={options}/>
                     </div>
