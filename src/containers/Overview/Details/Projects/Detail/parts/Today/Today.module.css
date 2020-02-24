@@ -10,4 +10,13 @@
 
 .task{
     margin: 25px 0;
+    display: flex;
+    align-items: center;
+}
+
+.task label{
+    flex: 1;
+}
+.task svg{
+    width: 15px;
 }
