@@ -4,21 +4,16 @@ import More from '../../../../../../../components/UI/More/More'
 import Checkbox from '../../../../../../../components/UI/Checkbox/Checkbox'
 import Delete from '../../../../../../../components/UI/Delete/Delete'
 import Edit from '../../../../../../../components/UI/Edit/Edit'
+import {connect} from 'react-redux'
+import * as actions from '../../../../../../../store/actions/index'
 
-export default props =>{
-    // const [options] = useState([
-    //     {
-    //         text: 'Add new task'
-    //     },
-    //     {
-    //         text: 'Check all tasks'
-    //     },
-    //     {
-    //         text: 'Uncheck all tasks'
-    //     }
-    // ])
+const mapDispatchToProps = dispatch =>{
+    return {
+        setPopup: (popup) => dispatch(actions.setPopup(popup)) 
+    }
+}
 
-    // const [showOptions, setShowOptions] = useState(true)
+export default connect(null, mapDispatchToProps)(props =>{
 
     const getTodayTasks = ()=>{
         const date = new Date()
@@ -43,7 +38,23 @@ export default props =>{
         return filterOut
     }
 
-    const test = ()=>console.log('test')
+    const openPopup = ()=>{
+        props.setPopup({
+            type: 'Options',
+            data:[
+                {
+                    text: 'Add new task'
+                },
+                {
+                    text: 'Check all tasks'
+                },
+                {
+                    text: 'Uncheck all tasks'
+                }
+            ]
+        })
+    }
+
     const tasks = getTodayTasks().map((task,i)=>{
         return (
             <div className={styles.task} key={i}>
@@ -59,11 +70,11 @@ export default props =>{
                 <div className={styles.info}>
                     <h3>Today</h3>
                     <div className={styles.moreContainer}>
-                        <More clicked={test}/>
+                        <More clicked={openPopup}/>
                     </div>
                 </div>
                 {tasks}
             </div>
         </React.Fragment>
     )
-}
+})

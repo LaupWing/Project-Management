@@ -1,9 +1,9 @@
 import * as actionTypes from './actionTypes'
 
 
-export const setPopup = (error)=>{
+export const setPopup = (popup)=>{
     return {
         type: actionTypes.SET_POPUP,
-        error
+        popup
     }
 }
