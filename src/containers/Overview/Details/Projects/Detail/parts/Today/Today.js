@@ -1,11 +1,24 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styles from './Today.module.css'
 import More from '../../../../../../../components/UI/More/More'
 import Checkbox from '../../../../../../../components/UI/Checkbox/Checkbox'
 import Delete from '../../../../../../../components/UI/Delete/Delete'
 import Edit from '../../../../../../../components/UI/Edit/Edit'
+import Options from '../../../../../../../components/UI/Options/Options'
 
 export default props =>{
+    const [options] = useState([
+        {
+            text: 'Add new task'
+        },
+        {
+            text: 'Check all tasks'
+        },
+        {
+            text: 'Delete all tasks'
+        }
+    ])
+
     const getTodayTasks = ()=>{
         const date = new Date()
         const day = date.getDate()
@@ -44,6 +57,7 @@ export default props =>{
                     <h3>Today</h3>
                     <div>
                         <More/>
+                        <Options options={options}/>
                     </div>
                 </div>
                 {tasks}
