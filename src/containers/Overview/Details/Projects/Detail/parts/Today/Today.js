@@ -19,6 +19,8 @@ export default props =>{
         }
     ])
 
+    const [showOptions, setShowOptions] = useState(true)
+
     const getTodayTasks = ()=>{
         const date = new Date()
         const day = date.getDate()
@@ -57,7 +59,10 @@ export default props =>{
                     <h3>Today</h3>
                     <div className={styles.moreContainer}>
                         <More/>
-                        <Options options={options}/>
+                        <Options 
+                            options={options}
+                            show={showOptions}
+                        />
                     </div>
                 </div>
                 {tasks}

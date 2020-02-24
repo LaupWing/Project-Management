@@ -3,6 +3,12 @@
     background: var(--contrast-color);
     padding: 5px 10px;
     border-bottom: solid 1px var(--grey-border);
+    cursor: pointer;
+    transition: .25s all;
+}
+.Option:hover{
+    background: var(--button-color);
+    color: var(--contrast-color);
 }
 .Option:last-of-type{
     border: none;
