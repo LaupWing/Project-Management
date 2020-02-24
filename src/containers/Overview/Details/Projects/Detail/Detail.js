@@ -25,34 +25,55 @@ export default connect(mapStateToProps)(props =>{
     return(
         <div className={styles.Detail}>
             <nav>
-                <NavLink to="/projects">
+                <NavLink 
+                    to="/projects"
+                >
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46 26">
                         <g>
                             <polygon points="46 6.73 22.93 6.73 22.93 0 0 13 22.93 26 22.93 19.27 46 19.27 46 6.73"/>
                         </g>
                     </svg>
                 </NavLink>
-                <li className={styles.active}>
-                    <NavLink exact to={`/projects/${props.match.params.id}`}>
-                        Today
-                    </NavLink>
-                </li>
+                <NavLink 
+                    className={styles.link}
+                    exact to={`/projects/${props.match.params.id}`}
+                    activeClassName={styles.active}
+                >
+                    <li>
+                            Today
+                    </li>
+                </NavLink>
 
-                <li>
-                    <NavLink exact to={`/projects/${props.match.params.id}/progression`}>
+                <NavLink
+                    className={styles.link} 
+                    exact 
+                    to={`/projects/${props.match.params.id}/progression`}
+                    activeClassName={styles.active}
+                >
+                    <li>
                         Progression
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink exact to={`/projects/${props.match.params.id}/skills`}>
-                        Skills
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink exact to={`/projects/${props.match.params.id}/settings`}>
-                        Settings
-                    </NavLink>
-                </li>
+                    </li>
+                </NavLink>
+                <NavLink 
+                    className={styles.link}
+                    exact 
+                    to={`/projects/${props.match.params.id}/skills`}
+                    activeClassName={styles.active}
+                >
+                    <li>
+                            Skills
+                    </li>
+                </NavLink>
+                <NavLink 
+                    className={styles.link}
+                    exact 
+                    to={`/projects/${props.match.params.id}/settings`}
+                    activeClassName={styles.active}    
+                >
+                    <li>
+                            Settings
+                    </li>
+                </NavLink>
             </nav>
             {project 
                 ?   <div className={styles.content}>
