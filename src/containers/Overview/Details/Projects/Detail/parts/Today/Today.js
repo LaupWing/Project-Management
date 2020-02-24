@@ -53,7 +53,8 @@ export default connect(null, mapDispatchToProps)(props =>{
                     text: 'Uncheck all tasks'
                 }
             ],
-            positions
+            positions,
+            backdropStyle: 'transparent'
         })
     }
 

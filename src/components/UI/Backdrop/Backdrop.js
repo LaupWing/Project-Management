@@ -5,7 +5,7 @@ export default (props)=>(
     props.show
         ? <div 
             className={[styles['Backdrop'], 
-                props.backdropStyle 
+                props.backdropStyle
                 ? styles[props.backdropStyle]
                 : ''
             ].join(' ')} onClick={props.clicked}>

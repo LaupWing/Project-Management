@@ -22,7 +22,7 @@ export default connect(null,mapDispatchToProps)(props =>{
             <Backdrop 
                 clicked={props.closePopup} 
                 show={props.popup ? true : false}
-                backdropStyle='transparent'
+                backdropStyle={props.popup.backdropStyle}
             />
             <DynamicComponent popup={props.popup}/>
         </React.Fragment>
