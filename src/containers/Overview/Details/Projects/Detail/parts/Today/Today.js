@@ -32,8 +32,6 @@ export default props =>{
     })
     return(
         <React.Fragment>
-            <h2>{props.project.name}</h2>
-            <p>{props.project.description}</p>
             <div className={styles.today}>
                 <div className={styles.info}>
                     <h3>Today</h3>

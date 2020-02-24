@@ -77,15 +77,27 @@ export default connect(mapStateToProps)(props =>{
             </nav>
             {project 
                 ?   <div className={styles.content}>
+                        <h2>{project.name}</h2>
+                        <p>{project.description}</p>
                         <Switch>
                             <Route 
                                 exact
                                 path="/projects/:id" 
                                 render={(props)=><Today project={project} {...props}/>}
                             />
-                            <Route path="/projects/:id/progression" component={Progression}/>
-                            <Route path="/projects/:id/skills" component={Skills}/>
-                            <Route path="/projects/:id/settings" component={Settings}/>
+                            <Route 
+                                path="/projects/:id/progression" 
+                                render={(props)=><Progression project={project} {...props}/>}
+                            />
+                            <Route 
+                                path="/projects/:id/skills" 
+                                render={(props)=><Skills project={project} {...props}/>}
+                            />
+                            <Route 
+                                path="/projects/:id/settings" 
+                                component={Settings}
+                                render={(props)=><Settings project={project} {...props}/>}
+                            />
                         </Switch>
 
                     </div>
