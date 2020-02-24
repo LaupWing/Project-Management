@@ -4,14 +4,14 @@
     transition: .5s all;
     cursor: pointer;
 }
-.Detail svg polygon{
+.back polygon{
     fill: var(--button-color);
     transition: .5s all;
 }
-.Detail svg:hover{
+.back:hover{
     background-color: var(--button-color);
 }
-.Detail svg:hover polygon{
+.back:hover polygon{
     fill: var(--contrast-color);
 }
 .Detail nav{
