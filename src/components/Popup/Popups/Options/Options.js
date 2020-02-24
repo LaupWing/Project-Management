@@ -1,5 +1,5 @@
 import React from 'react'
-import Backdrop from '../Backdrop/Backdrop'
+import Backdrop from '../../../UI/Backdrop/Backdrop'
 import Option from './Option/Option'
 import styles from './Options.module.css'
 
