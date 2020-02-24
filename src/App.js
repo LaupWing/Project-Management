@@ -74,7 +74,7 @@ class App extends Component {
             <div className={classes.App}>
                 {this.props.user === null ? <Redirect to='/auth'/>:null}
                 {bgItems}
-                <main onClick={()=>console.log(this.props.popup)}>
+                <main>
                     <section 
                         className={classes['white-section']} 
                         style={{
@@ -103,7 +103,7 @@ class App extends Component {
                     {this.props.showModal ? <AddProject/> : ''}
                 </Modal>
                 {this.props.popup
-                ?   <Popup/>
+                ?   <Popup popup={this.props.popup}/>
                 :   null}
             </div>
         )
