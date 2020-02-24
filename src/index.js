@@ -8,6 +8,7 @@ import {Provider} from 'react-redux'
 import user from './store/reducers/user'
 import projects from './store/reducers/projects'
 import error from './store/reducers/error'
+import popup from './store/reducers/popup'
 import './initFirebase'
 import firebase from 'firebase'
 import {BrowserRouter} from 'react-router-dom'
@@ -17,7 +18,8 @@ import createSagaMiddleware from  'redux-saga'
 const rootrReducer = combineReducers({
     user,
     projects,
-    error
+    error,
+    popup
 })
 const sagaMiddleware = createSagaMiddleware()
 const store = createStore(rootrReducer, applyMiddleware(sagaMiddleware))

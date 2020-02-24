@@ -110,7 +110,8 @@ const mapStateToProps = state =>{
     return{
         user:      state.user.user,
         auth:      state.user.auth,
-        showModal: state.projects.addModal
+        showModal: state.projects.addModal,
+        popup:     state.popup.popup
     }
 }
 
