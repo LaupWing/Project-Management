@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styles from './Today.module.css'
 import More from '../../../../../../../components/UI/More/More'
 import Checkbox from '../../../../../../../components/UI/Checkbox/Checkbox'
@@ -19,6 +19,8 @@ const mapStateToProps = state =>{
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(props =>{
+
+    const [addNew, setAddNew] = useState(false)
 
     const getTodayTasks = ()=>{
         const date = new Date()
@@ -52,7 +54,10 @@ export default connect(mapStateToProps, mapDispatchToProps)(props =>{
             data:[
                 {
                     text: 'Add new task',
-                    clicked: test
+                    clicked: ()=> {
+                        setAddNew(true)
+                        props.setPopup(null)
+                    }
                 },
                 {
                     text: 'Check all tasks',
@@ -77,7 +82,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(props =>{
             </div>
         )
     })
-    
+
     return(
         <React.Fragment>
             <div className={styles.today}>
@@ -86,6 +91,12 @@ export default connect(mapStateToProps, mapDispatchToProps)(props =>{
                     <More active={props.popup ? 'active' : ''} clicked={openPopup}/>
                 </div>
                 {tasks}
+                {addNew && 
+                <form>
+                    <input type="text" placeholder="Add New Task"></input>
+                    <button>cancel</button>
+                    <button>add</button>
+                </form>}
             </div>
         </React.Fragment>
     )
