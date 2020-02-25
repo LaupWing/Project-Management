@@ -83,6 +83,10 @@ export default connect(mapStateToProps, mapDispatchToProps)(props =>{
         )
     })
 
+    const addTask = (e)=>{
+        e.preventDefault()
+    }
+
     return(
         <React.Fragment>
             <div className={styles.today}>
@@ -92,9 +96,9 @@ export default connect(mapStateToProps, mapDispatchToProps)(props =>{
                 </div>
                 {tasks}
                 {addNew && 
-                <form>
+                <form onSubmit={(e)=>addTask(e)}>
                     <input type="text" placeholder="Add New Task"></input>
-                    <button>cancel</button>
+                    <button type="button" onClick={()=> setAddNew(false)}>cancel</button>
                     <button>add</button>
                 </form>}
             </div>
