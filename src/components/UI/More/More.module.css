@@ -7,6 +7,10 @@
     margin-top: 7px;
 }
 
+.active .circle {
+    background:  var(--button-color);
+}
+
 .circle{
     width: 7px;
     height: 7px;

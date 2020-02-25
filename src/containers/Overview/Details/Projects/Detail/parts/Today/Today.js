@@ -12,8 +12,13 @@ const mapDispatchToProps = dispatch =>{
         setPopup: (popup) => dispatch(actions.setPopup(popup)) 
     }
 }
+const mapStateToProps = state =>{
+    return {
+        popup: state.popup.popup 
+    }
+}
 
-export default connect(null, mapDispatchToProps)(props =>{
+export default connect(mapStateToProps, mapDispatchToProps)(props =>{
 
     const getTodayTasks = ()=>{
         const date = new Date()
@@ -77,9 +82,7 @@ export default connect(null, mapDispatchToProps)(props =>{
             <div className={styles.today}>
                 <div className={styles.info}>
                     <h3>Today</h3>
-                    <div className={styles.moreContainer}>
-                        <More clicked={openPopup}/>
-                    </div>
+                    <More active={props.popup ? 'active' : ''} clicked={openPopup}/>
                 </div>
                 {tasks}
             </div>
