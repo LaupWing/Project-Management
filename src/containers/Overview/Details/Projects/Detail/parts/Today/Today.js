@@ -71,12 +71,13 @@ export default connect(mapStateToProps, mapDispatchToProps)(props =>{
     const tasks = getTodayTasks().map((task,i)=>{
         return (
             <div className={styles.task} key={i}>
-                <Checkbox name={task.task}/>
+                <Checkbox name={task.task} completed={task.completed}/>
                 <Delete/>
                 <Edit/>
             </div>
         )
     })
+    
     return(
         <React.Fragment>
             <div className={styles.today}>
