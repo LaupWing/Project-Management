@@ -35,3 +35,29 @@
 .moreContainer{
     position: relative;
 }
+
+.today form input{
+    flex: 1;
+}
+.today form{
+    border: solid 1px var(--white-contrast);
+    width: 100%;
+    display: flex;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.today form button{
+    padding: 5px 10px;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+.today form button:first-of-type{
+    color: var(--button-color);
+    border: solid 1px var(--button-color);
+    margin-right: 5px;
+    background: var(--contrast-color);
+}
+.today form button:last-of-type{
+    background: var(--button-color);
+    color: var(--contrast-color);
+}
