@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {Route, Switch, Redirect} from 'react-router-dom'
 import Auth from './containers/Auth/Auth'
-import Overview from './containers/Overview/Overview'
 import ProjectDetails from './containers/Overview/Details/Projects/Project'
 import Projects from './containers/Overview/Projects/Projects'
 import {connect} from 'react-redux'
@@ -51,7 +50,6 @@ class App extends Component {
         const routesWhite =(
             <Switch>
                 <Route path='/auth' component={Auth}/>
-                <Route path='/auth' component={Overview}/>
                 <Route path='/projects' component={ProjectDetails}/>
             </Switch>
         )
