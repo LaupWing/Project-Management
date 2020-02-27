@@ -8,6 +8,13 @@
     z-index: 10;
     display: flex;
     justify-content: center;
-    align-items: center;
+    padding-top: 15%;
+}
+
+.container{
+    width: 80%;
+}
+
+.Uncompleted h2{
     color: var(--contrast-color);
 }
