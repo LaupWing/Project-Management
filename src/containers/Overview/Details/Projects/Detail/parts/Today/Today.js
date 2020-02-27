@@ -22,6 +22,8 @@ const mapStateToProps = state =>{
 
 export default connect(mapStateToProps, mapDispatchToProps)(props =>{
     const [addNew, setAddNew] = useState(false)
+    const [unCompletedTasks, setCompletedTasks] = useState(false)
+
     useEffect(()=>{
         setAddNew(false)
     },[setAddNew, props.match.params.id])
