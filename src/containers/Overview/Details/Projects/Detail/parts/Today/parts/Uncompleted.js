@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './Uncompleted.module.css'
 
 export default props =>{
+    console.log(props)
     return (
         <div className={styles.Uncompleted}>
             <div className={styles.container}>
