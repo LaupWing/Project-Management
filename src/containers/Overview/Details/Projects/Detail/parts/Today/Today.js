@@ -21,7 +21,6 @@ const mapStateToProps = state =>{
 export default connect(mapStateToProps, mapDispatchToProps)(props =>{
     const [addNew, setAddNew] = useState(false)
     useEffect(()=>{
-        console.log(props)
         setAddNew(false)
     },[setAddNew, props.match.params.id])
 
@@ -76,10 +75,18 @@ export default connect(mapStateToProps, mapDispatchToProps)(props =>{
         })
     }
 
+    const toggleCompleted = (task)=>{
+        console.log(task)
+    } 
+
     const tasks = getTodayTasks().map((task,i)=>{
         return (
             <div className={styles.task} key={i}>
-                <Checkbox name={task.task} completed={task.completed}/>
+                <Checkbox 
+                    changed={()=>toggleCompleted(task)} 
+                    name={task.task} 
+                    completed={task.completed}
+                />
                 <Delete/>
                 <Edit/>
             </div>
