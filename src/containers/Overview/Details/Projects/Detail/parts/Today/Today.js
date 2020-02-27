@@ -27,13 +27,14 @@ export default connect(mapStateToProps, mapDispatchToProps)(props =>{
 
     useEffect(()=>{
         setAddNew(false)
+        setCompletedTasks(false)
     },[setAddNew, props.match.params.id])
 
     useEffect(()=>{
         if(props.project.tasks.some(p=>!p.completed)){
             setCompletedTasks(true)
         }
-    })
+    },[props.project])
 
     const getTodayTasks = ()=>{
         const date = new Date()
