@@ -21,5 +21,7 @@ export function* fetchingUserProjects(action){
 }
 
 export function* updateUserProjects(action){
-    yield put(action.setUserProjects())
+    const {id, changes} = action
+    console.log(id, changes)
+    // yield put(action.setUserProjects())
 }

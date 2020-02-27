@@ -2,7 +2,6 @@ import firebase from 'firebase'
 import {put} from 'redux-saga/effects'
 import * as actions from '../../actions/index'
 import db from '../../../initFirebase'
-
 export function* loginSaga(action){
     const {email, password} = action
     try{
@@ -22,9 +21,9 @@ export function* updateUserDataSaga(action){
     const {userData, id} = action
     try{
         yield db
-            .collection('userData')
-            .doc(id)
-            .update(userData)
+        .collection('userData')
+        .doc(id)
+        .update(userData)
         
         yield put(actions.setUserData(userData))
         yield put(actions.setError(null))
@@ -41,9 +40,9 @@ export function* setUserDataSaga(action){
     const {userData, id} = action
     try{
         yield db
-            .collection('userData')
-            .doc(id)
-            .set(userData)
+        .collection('userData')
+        .doc(id)
+        .set(userData)
         yield put(actions.setUserData(userData))
         yield put(actions.setError(null))
     }catch(error){

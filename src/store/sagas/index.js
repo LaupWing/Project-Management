@@ -10,7 +10,8 @@ import {
 }from './parts/user'
 
 import {
-    fetchingUserProjects
+    fetchingUserProjects,
+    updateUserProjects
 } from './parts/project'
 
 export function* watchAuth(){
@@ -23,4 +24,5 @@ export function* watchAuth(){
 
 export function* watchProjects(){
     yield takeEvery(actionTypes.FETCH_USERPROJECTS_SAGA, fetchingUserProjects)
+    yield takeEvery(actionTypes.UPDATE_USERPROJECTS_SAGA, updateUserProjects)
 }

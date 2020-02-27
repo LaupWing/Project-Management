@@ -6,10 +6,12 @@ import Delete from '../../../../../../../components/UI/Delete/Delete'
 import Edit from '../../../../../../../components/UI/Edit/Edit'
 import {connect} from 'react-redux'
 import * as actions from '../../../../../../../store/actions/index'
+import firebase from 'firebase'
 
 const mapDispatchToProps = dispatch =>{
     return {
-        setPopup: (popup) => dispatch(actions.setPopup(popup)) 
+        setPopup: (popup) => dispatch(actions.setPopup(popup)),
+        updateProject: (id, changes) => dispatch(actions.updateUserProjects(id, changes)) 
     }
 }
 const mapStateToProps = state =>{
@@ -74,7 +76,8 @@ export default connect(mapStateToProps, mapDispatchToProps)(props =>{
     }
 
     const toggleCompleted = (task)=>{
-        console.log(task)
+        const id = firebase.auth().currentUser.uid
+        props.updateProject(id,task)
     } 
 
     const tasks = getTodayTasks().map((task,i)=>{

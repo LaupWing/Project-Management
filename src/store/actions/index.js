@@ -11,7 +11,8 @@ export{
     setActiveProject,
     fetchUserProjects,
     setUserProjects,
-    openAddProjectModal
+    openAddProjectModal,
+    updateUserProjects
 }from './projects'
 export{
     setError

@@ -26,9 +26,10 @@ export const fetchUserProjects = (id)=>{
         id
     }
 }
-export const updateUserProjects = (changes)=>{
+export const updateUserProjects = (id, changes)=>{
     return{
         type: actionTypes.UPDATE_USERPROJECTS_SAGA,
-        changes
+        changes,
+        id
     }
 }
