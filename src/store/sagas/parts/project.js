@@ -20,16 +20,6 @@ export function* fetchingUserProjects(action){
     }
 }
 
-// try{
-//     yield db
-//         .collection('userData')
-//         .doc(id)
-//         .update(userData)
-        
-//     yield put(actions.setUserData({
-//         type: 'GOT DATA',
-//         userData
-//     }))
-// }catch(e){
-//     yield put(actions.setUserData({type:'ERROR',e}))
-// } 
+export function* updateUserProjects(action){
+    yield put(action.setUserProjects())
+}

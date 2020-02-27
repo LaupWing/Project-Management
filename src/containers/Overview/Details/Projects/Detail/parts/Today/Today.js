@@ -47,8 +47,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(props =>{
         return filterOut
     }
 
-    const test = ()=>console.log('it works!')
-
     const openPopup = (e)=>{
         const positions = e.currentTarget.getBoundingClientRect()
         props.setPopup({

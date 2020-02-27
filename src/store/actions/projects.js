@@ -13,15 +13,22 @@ export const setUserProjects = (projects)=>{
         projects
     }
 }
+export const openAddProjectModal = (open)=>{
+    return{
+        type: actionTypes.ADD_PROJECT_MODAL,
+        open
+    }
+}
+
 export const fetchUserProjects = (id)=>{
     return{
         type: actionTypes.FETCH_USERPROJECTS_SAGA,
         id
     }
 }
-export const openAddProjectModal = (open)=>{
+export const updateUserProjects = (changes)=>{
     return{
-        type: actionTypes.ADD_PROJECT_MODAL,
-        open
+        type: actionTypes.UPDATE_USERPROJECTS_SAGA,
+        changes
     }
 }
