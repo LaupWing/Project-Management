@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from 'Uncompleted.module.css'
+import styles from './Uncompleted.module.css'
 
 export default props =>{
     return (

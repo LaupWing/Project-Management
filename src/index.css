@@ -1,5 +1,6 @@
 *{
     --base-color: #252A41;
+    --base-color-rgba: rgba(37,42,65,.8);
     --lighter-base-color: #3B3F54;
     --contrast-color: white;
     --highlight-color: rgba(255, 255, 255, 0.4);
