@@ -27,7 +27,7 @@ const initialState ={
             tasks: [
                 {
                     date:'Thu Feb 27 2020 16:08:00 GMT+0100 (Midden-Europese standaardtijd)',
-                    task:'Test Test',
+                    task:'Test Test Test TestTest TestTest TestTest TestTest TestTest Test',
                     completed: false
                 },
                 {
