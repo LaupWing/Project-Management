@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import styles from './Today.module.css'
 import More from '../../../../../../../components/UI/More/More'
 import Checkbox from '../../../../../../../components/UI/Checkbox/Checkbox'
@@ -19,8 +19,11 @@ const mapStateToProps = state =>{
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(props =>{
-
     const [addNew, setAddNew] = useState(false)
+    useEffect(()=>{
+        console.log(props)
+        setAddNew(false)
+    },[setAddNew, props.match.params.id])
 
     const getTodayTasks = ()=>{
         const date = new Date()
