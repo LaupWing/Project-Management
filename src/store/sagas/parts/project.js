@@ -2,6 +2,10 @@
 import {put} from 'redux-saga/effects'
 import * as actions from '../../actions/index'
 import db from '../../../initFirebase'
+import projects from '../../reducers/projects'
+import {createStore} from 'redux'
+const store = createStore(projects)
+
 
 export function* fetchingUserProjects(action){
     const {id} = action
@@ -21,7 +25,14 @@ export function* fetchingUserProjects(action){
 }
 
 export function* updateUserProjects(action){
+    const {projects} = store.getState()
     const {id, changes} = action
-    console.log(id, changes)
-    // yield put(action.setUserProjects())
+    const updatedProjects = projects.map(p=>{
+        if(p===changes){
+            return changes
+        }
+        return p
+    }) 
+    console.log(updatedProjects)
+    yield put(actions.setUserProjects(updatedProjects))
 }

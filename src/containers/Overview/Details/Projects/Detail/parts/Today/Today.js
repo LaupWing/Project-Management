@@ -10,8 +10,8 @@ import firebase from 'firebase'
 
 const mapDispatchToProps = dispatch =>{
     return {
-        setPopup: (popup) => dispatch(actions.setPopup(popup)),
-        updateProject: (id, changes) => dispatch(actions.updateUserProjects(id, changes)) 
+        setPopup:       (popup)       => dispatch(actions.setPopup(popup)),
+        updateProject:  (id, changes) => dispatch(actions.updateUserProjects(id, changes)) 
     }
 }
 const mapStateToProps = state =>{
@@ -77,7 +77,13 @@ export default connect(mapStateToProps, mapDispatchToProps)(props =>{
 
     const toggleCompleted = (task)=>{
         const id = firebase.auth().currentUser.uid
-        props.updateProject(id,task)
+        props.project.tasks = props.project.tasks.map(t=>{
+            if(t===task){
+                task.completed = !task.completed
+            }
+            return t
+        }) 
+        props.updateProject(id,props.project)
     } 
 
     const tasks = getTodayTasks().map((task,i)=>{
