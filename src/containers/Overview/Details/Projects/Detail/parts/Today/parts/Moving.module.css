@@ -69,8 +69,8 @@
 .options button:first-of-type{
     margin-right: 7px;
 }
-.future{
-    margin-top: 20px;
+.today{
+    margin-top: 40px;
 }
 @keyframes goIn{
     to{
