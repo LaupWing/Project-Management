@@ -126,6 +126,11 @@
 .today h2{
     color: var(--button-color);
 }
+.today p{
+    opacity: .7;
+    font-weight: normal;
+    color: var(--button-color);
+}
 @keyframes goIn{
     to{
         opacity: 1;
