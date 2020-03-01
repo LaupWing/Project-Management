@@ -1,8 +1,8 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styles from './Moving.module.css'
 
 export default props =>{
-    console.log(props)
+    const [uncompletedActive, setUncompletedActive] = useState(true)
     const uncompleted = props.tasks && props.tasks.map(task=>
         <div className={styles.task}>
             <p className={styles.name}>{task.task}</p>
@@ -17,7 +17,7 @@ export default props =>{
         <div className={styles.Moving}>
             <div className={styles.container}>
                 <div className={styles.choices}>
-                    <div className={styles.uncompleted}>
+                    <div className={[styles.uncompleted, uncompletedActive ? styles.active : ''].join(' ')}>
                         <h2>Uncompleted Tasks</h2>
                         <p className={styles.description}>You have some uncompleted tasks! What do you want to do with them.</p>
                         <div className={styles.taskWrapper}>
