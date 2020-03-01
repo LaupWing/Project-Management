@@ -3,6 +3,8 @@ import styles from './Moving.module.css'
 
 export default props =>{
     const [uncompletedActive, setUncompletedActive] = useState(true)
+    const [today, setToday] = useState([])
+
     const uncompleted = props.tasks && props.tasks.map(task=>
         <div className={styles.task}>
             <p className={styles.name}>{task.task}</p>
@@ -10,6 +12,15 @@ export default props =>{
                 <p>Move to:</p>
                 <button>Today</button>
                 <button>Future</button>
+            </div>
+        </div>
+    )
+    const future = props.tasks && props.tasks.map(task=>
+        <div className={styles.task}>
+            <p className={styles.name}>{task.task}</p>
+            <div className={styles.options}>
+                <p>Move to:</p>
+                <button>Today</button>
             </div>
         </div>
     )
@@ -31,7 +42,7 @@ export default props =>{
                         <h2>Future</h2>
                         <p className={styles.description}>Tasks planned for the future</p>
                         <div className={styles.taskWrapper}>
-                            {uncompleted}
+                            {future}
                         </div>
                         <div className={styles.buttons}>
                             <button onClick={()=>setUncompletedActive(true)}>Back</button>
@@ -40,6 +51,10 @@ export default props =>{
                 </div>
                 <div className={styles.today}>
                     <h2>Today</h2>
+                    { today.length === 0 
+                        ? <p>Not any tasks set for today yet!</p> 
+                        : <p>Have tasks</p>
+                    }
                 </div>
             </div>
         </div>
