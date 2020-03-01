@@ -7,7 +7,7 @@ import Edit from '../../../../../../../components/UI/Edit/Edit'
 import {connect} from 'react-redux'
 import * as actions from '../../../../../../../store/actions/index'
 import firebase from 'firebase'
-import Uncompleted from './parts/Uncompleted'
+import Moving from './parts/Moving'
 
 const mapDispatchToProps = dispatch =>{
     return {
@@ -117,7 +117,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(props =>{
     return(
         <React.Fragment>
             <div className={styles.today}>
-                {unCompletedTasks && <Uncompleted tasks={props.project.tasks.filter(p=>!p.completed)}/>}
+                {unCompletedTasks && <Moving tasks={props.project.tasks.filter(p=>!p.completed)}/>}
                 <div className={styles.info}>
                     <h3>Today</h3>
                     <More active={props.popup ? 'active' : ''} clicked={openPopup}/>
