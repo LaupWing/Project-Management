@@ -8,6 +8,7 @@ Inspiration: [https://dribbble.com/shots/6816310--Exploration-Dashboard-for-Task
 ## To Do's
 - [ ] Add functional for moving tasks to future or today
 - [ ] Add future part
+- [ ] Add future move to today
 - [x] Need to make a seperate Error Object
     -   [x] Create Error Reducer
     -   [x] Handle error via Error Object
