@@ -16,19 +16,24 @@ export default props =>{
     return (
         <div className={styles.Moving}>
             <div className={styles.container}>
-                <div className={styles.uncompleted}>
-                    <h2>Uncompleted Tasks</h2>
-                    <p className={styles.description}>You have some uncompleted tasks! What do you want to do with them.</p>
-                    <div className={styles.taskWrapper}>
-                        {uncompleted}
+                <div className={styles.choices}>
+                    <div className={styles.uncompleted}>
+                        <h2>Uncompleted Tasks</h2>
+                        <p className={styles.description}>You have some uncompleted tasks! What do you want to do with them.</p>
+                        <div className={styles.taskWrapper}>
+                            {uncompleted}
+                        </div>
                     </div>
+                    {/* <div className={styles.future}>
+                        <h2>Future</h2>
+                        <p className={styles.description}>Tasks planned for the future</p>
+                        <div className={styles.taskWrapper}>
+                            {uncompleted}
+                        </div>
+                    </div> */}
                 </div>
-                <div className={styles.future}>
-                    <h2>Future</h2>
-                    <p className={styles.description}>Tasks planned for the future</p>
-                    <div className={styles.taskWrapper}>
-                        {uncompleted}
-                    </div>
+                <div className={styles.today}>
+                    <h2>Today</h2>
                 </div>
             </div>
         </div>
