@@ -24,16 +24,19 @@ export default props =>{
                             {uncompleted}
                         </div>
                         <div className={styles.buttons}>
-                            <button>Next</button>
+                            <button onClick={()=>setUncompletedActive(false)}>Next</button>
                         </div>
                     </div>
-                    {/* <div className={styles.future}>
+                    <div className={[styles.future, !uncompletedActive ? styles.active : ''].join(' ')}>
                         <h2>Future</h2>
                         <p className={styles.description}>Tasks planned for the future</p>
                         <div className={styles.taskWrapper}>
                             {uncompleted}
                         </div>
-                    </div> */}
+                        <div className={styles.buttons}>
+                            <button onClick={()=>setUncompletedActive(true)}>Back</button>
+                        </div>
+                    </div>
                 </div>
                 <div className={styles.today}>
                     <h2>Today</h2>
