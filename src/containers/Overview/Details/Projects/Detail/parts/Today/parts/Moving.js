@@ -23,6 +23,13 @@ export default props =>{
                         {uncompleted}
                     </div>
                 </div>
+                <div className={styles.future}>
+                    <h2>Future Tasks</h2>
+                    <p className={styles.description}>You have some uncompleted tasks! What do you want to do with them.</p>
+                    <div className={styles.taskWrapper}>
+                        {uncompleted}
+                    </div>
+                </div>
             </div>
         </div>
     )

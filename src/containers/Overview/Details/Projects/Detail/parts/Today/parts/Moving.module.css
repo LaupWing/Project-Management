@@ -37,17 +37,17 @@
     flex-grow: 1;
     margin-right: 30px;
 }
-.Uncompleted p{
+.Moving p{
     margin: 0;
     color: var(--highlight-color);
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
 }
-.Uncompleted h2{
+.Moving h2{
     color: var(--contrast-color);
 }
-.Uncompleted .description{
+.Moving .description{
     color: var(--highlight-color);
     font-weight: normal;
     margin-top: 5px;
@@ -68,6 +68,9 @@
 }
 .options button:first-of-type{
     margin-right: 7px;
+}
+.future{
+    margin-top: 20px;
 }
 @keyframes goIn{
     to{
