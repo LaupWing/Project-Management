@@ -69,7 +69,7 @@
 .options button:first-of-type{
     margin-right: 7px;
 }
-.today{
+.future{
     margin-top: 40px;
 }
 @keyframes goIn{
