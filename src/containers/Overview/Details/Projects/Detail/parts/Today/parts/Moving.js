@@ -23,6 +23,9 @@ export default props =>{
                         <div className={styles.taskWrapper}>
                             {uncompleted}
                         </div>
+                        <div className={styles.buttons}>
+                            <button>Next</button>
+                        </div>
                     </div>
                     {/* <div className={styles.future}>
                         <h2>Future</h2>

@@ -17,14 +17,15 @@
 }
 
 .taskWrapper{
+    flex: 1;
     margin-top: 20px;   
 }
 .container{
     width: 90%;
     display: flex;
     flex-direction: column;
-    margin-bottom: ;
 }
+
 .task{
     border: solid var(--button-color) 2px;
     padding:7px 10px;
@@ -74,11 +75,29 @@
 .options button:first-of-type{
     margin-right: 7px;
 }
+.uncompleted{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
 .future{
     margin-top: 40px;
 }
 .choices{
+    display: flex;
+    flex-direction: column;
     flex: 1;
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+.buttons button{
+    color: var(--contrast-color);
+    background: var(--button-color);
+    padding: 7px 25px;
+    border-radius: 100px;
 }
 .today{
     height: 50%;
