@@ -122,6 +122,23 @@
     align-self: flex-end;
     border-radius: 5px;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.today button{
+    justify-self: flex-end;
+    margin-top: auto;
+    color: var(--contrast-color);
+    background-color: var(--button-color);
+    border: solid 2px var(--button-color);
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+.today button:hover{
+    background-color: transparent;
+    color: var(--button-color);
 }
 .today h2{
     color: var(--button-color);

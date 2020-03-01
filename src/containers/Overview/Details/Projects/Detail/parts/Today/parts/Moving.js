@@ -55,6 +55,7 @@ export default props =>{
                         ? <p>Not any tasks set for today yet!</p> 
                         : <p>Have tasks</p>
                     }
+                    <button>IM DONE</button>
                 </div>
             </div>
         </div>
