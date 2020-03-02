@@ -8,6 +8,7 @@ import {connect} from 'react-redux'
 import * as actions from '../../../../../../../store/actions/index'
 import firebase from 'firebase'
 import Moving from './parts/Moving'
+import {getTodayTasks} from '../../../../../../../utils/taskFilters'
 
 const mapDispatchToProps = dispatch =>{
     return {
@@ -35,29 +36,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(props =>{
             setCompletedTasks(true)
         }
     },[props.project])
-
-    const getTodayTasks = ()=>{
-        const date = new Date()
-        const day = date.getDate()
-        const month = date.getMonth()
-        const year = date.getFullYear()
-        // eslint-disable-next-line
-        const filterOut =  props.project.tasks.filter(task=>{
-            const taskDate = new Date(task.date)
-            const taskDay = taskDate.getDate()
-            const taskMonth = taskDate.getMonth()
-            const taskyear = taskDate.getFullYear()
-            
-            if(
-                taskDay === day &&
-                taskMonth === month &&
-                taskyear === year
-            ){
-                return task
-            }
-        })
-        return filterOut
-    }
 
     const openPopup = (e)=>{
         const positions = e.currentTarget.getBoundingClientRect()
@@ -96,7 +74,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(props =>{
         props.updateProject(id,props.project)
     } 
 
-    const tasks = getTodayTasks().map((task,i)=>{
+    const tasks = getTodayTasks(props.project.tasks).map((task,i)=>{
         return (
             <div className={styles.task} key={i}>
                 <Checkbox 
