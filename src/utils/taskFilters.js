@@ -34,8 +34,21 @@ const getFutureTasks = (array)=>{
     })
     return filterOut
 }
+const getOutDatedTasks = (array)=>{
+    const date = new Date()
+    // eslint-disable-next-line
+    const filterOut =  array.filter(task=>{
+        const taskDate = new Date(task.date)
+        
+        if(taskDate < date){
+            return task
+        }
+    })
+    return filterOut
+}
 
 module.exports ={
     getFutureTasks,
-    getTodayTasks
+    getTodayTasks,
+    getOutDatedTasks
 }
