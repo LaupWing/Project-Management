@@ -33,7 +33,7 @@ export default props =>{
                 <div className={styles.choices}>
                     <div className={[styles.uncompleted, uncompletedActive ? styles.active : ''].join(' ')}>
                         <h2>Uncompleted Tasks</h2>
-                        <p className={styles.description}>You have some uncompleted tasks! What do you want to do with them.</p>
+                        <p className={styles.description}>You have some outdated uncompleted tasks! What do you want to do with them.</p>
                         <div className={styles.taskWrapper}>
                             {uncompleted}
                         </div>
