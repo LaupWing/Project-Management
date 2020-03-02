@@ -3,9 +3,11 @@ import styles from './Moving.module.css'
 
 export default props =>{
     const [uncompletedActive, setUncompletedActive] = useState(true)
+    const [uncompletedList, setUncompletedList] = useState(props.tasks || [])
+    const [futureList, setFutureList] = useState(true)
     const [today, setToday] = useState([])
 
-    const uncompleted = props.tasks && props.tasks.map(task=>
+    const uncompleted = uncompletedList.map(task=>
         <div className={styles.task}>
             <p className={styles.name}>{task.task}</p>
             <div className={styles.options}>
