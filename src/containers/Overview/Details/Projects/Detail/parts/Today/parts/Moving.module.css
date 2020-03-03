@@ -129,7 +129,7 @@
     display: flex;
     flex-direction: column;
 }
-.today button{
+.today button.done{
     justify-self: flex-end;
     margin-top: auto;
     color: var(--contrast-color);
@@ -156,11 +156,15 @@
     width: 100%;
     display: flex;
     align-items: center;
+    padding: 5px;
+    border-radius: 5px;
+    border: solid 1px var(--button-color);
 }
 .todayTask p{
     color: var(--button-color);
-
+    flex: 1;
 }
+
 @keyframes goIn{
     to{
         opacity: 1;

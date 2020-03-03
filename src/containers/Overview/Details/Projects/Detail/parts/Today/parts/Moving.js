@@ -83,7 +83,7 @@ export default props =>{
                         ? <p>Not any tasks set for today yet!</p> 
                         : todayOutput
                     }
-                    <button>IM DONE</button>
+                    <button className={styles.done}>IM DONE</button>
                 </div>
             </div>
         </div>
