@@ -15,7 +15,10 @@
     opacity: 0;
     color: var(--contrast-color);
 }
-
+.Moving svg{
+    margin: 0 5px;
+    width: 20px;
+}
 .taskWrapper{
     flex: 1;
     margin-top: 20px;   

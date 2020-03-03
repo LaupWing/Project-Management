@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import styles from './Moving.module.css'
 import {getFutureTasks, getOutDatedTasks} from '../../../../../../../../utils/taskFilters'
+import Delete from '../../../../../../../../components/UI/Delete/Delete'
 
 export default props =>{
     const [uncompletedActive, setUncompletedActive] = useState(true)
@@ -23,6 +24,7 @@ export default props =>{
                     setUncompletedList(filteredOut)
                     setFutureList([...futureList, task])
                 }}>Future</button>
+                <Delete/>
             </div>
         </div>
     )
@@ -32,6 +34,7 @@ export default props =>{
             <div className={styles.options}>
                 <p>Move to:</p>
                 <button>Today</button>
+                <Delete/>
             </div>
         </div>
     )
