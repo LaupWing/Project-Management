@@ -140,7 +140,7 @@
     border-radius: 10px;
     font-size: 1rem;
 }
-.today button:hover{
+.today button.done:hover{
     background-color: transparent;
     color: var(--button-color);
 }
@@ -159,6 +159,7 @@
     padding: 5px;
     border-radius: 5px;
     border: solid 1px var(--button-color);
+    margin: 5px 0;
 }
 .todayTask p{
     color: var(--button-color);
