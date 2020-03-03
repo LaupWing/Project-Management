@@ -152,6 +152,15 @@
     font-weight: normal;
     color: var(--button-color);
 }
+.todayTask{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.todayTask p{
+    color: var(--button-color);
+
+}
 @keyframes goIn{
     to{
         opacity: 1;

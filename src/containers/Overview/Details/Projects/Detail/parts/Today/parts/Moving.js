@@ -43,11 +43,12 @@ export default props =>{
         </div>
     )
     const todayOutput = todayList.map(task=>
-        <div className={styles.task}>
-            <p className={styles.name}>{task.task}</p>
+        <div className={styles.todayTask}>
+            <p>{task.task}</p>
             <div className={styles.options}>
                 <p>Move to:</p>
                 <button>Today</button>
+                <Delete/>
             </div>
         </div>
     )
