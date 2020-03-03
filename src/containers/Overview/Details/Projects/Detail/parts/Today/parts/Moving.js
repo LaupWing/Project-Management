@@ -15,12 +15,12 @@ export default props =>{
             <div className={styles.options}>
                 <p>Move to:</p>
                 <button onClick={()=>{
-                    const filteredOut = futureList.filter(x=>x!==task)
+                    const filteredOut = uncompletedList.filter(x=>x!==task)
                     setUncompletedList(filteredOut)
                     setToday([...todayList, task])
                 }}>Today</button>
                 <button onClick={()=>{
-                    const filteredOut = futureList.filter(x=>x!==task)
+                    const filteredOut = uncompletedList.filter(x=>x!==task)
                     setUncompletedList(filteredOut)
                     setFutureList([...futureList, task])
                 }}>Future</button>
@@ -33,7 +33,11 @@ export default props =>{
             <p className={styles.name}>{task.task}</p>
             <div className={styles.options}>
                 <p>Move to:</p>
-                <button>Today</button>
+                <button onClick={()=>{
+                    const filteredOut = futureList.filter(x=>x!==task)
+                    setFutureList(filteredOut)
+                    setToday([...todayList, task])
+                }}>Today</button>
                 <Delete/>
             </div>
         </div>
