@@ -6,19 +6,36 @@ export default props =>{
     const [uncompletedActive, setUncompletedActive] = useState(true)
     const [uncompletedList, setUncompletedList] = useState(props.tasks ? getOutDatedTasks(props.tasks) : [])
     const [futureList, setFutureList] = useState(props.tasks ? getFutureTasks(props.tasks):[])
-    const [today, setToday] = useState([])
+    const [todayList, setToday] = useState([])
 
-    const uncompleted = uncompletedList.map(task=>
+    const uncompletedOutput = uncompletedList.map(task=>
+        <div className={styles.task}>
+            <p className={styles.name}>{task.task}</p>
+            <div className={styles.options}>
+                <p>Move to:</p>
+                <button onClick={()=>{
+                    const filteredOut = futureList.filter(x=>x!==task)
+                    setUncompletedList(filteredOut)
+                    setToday([...todayList, task])
+                }}>Today</button>
+                <button onClick={()=>{
+                    const filteredOut = futureList.filter(x=>x!==task)
+                    setUncompletedList(filteredOut)
+                    setFutureList([...futureList, task])
+                }}>Future</button>
+            </div>
+        </div>
+    )
+    const futureOutput = futureList.map(task=>
         <div className={styles.task}>
             <p className={styles.name}>{task.task}</p>
             <div className={styles.options}>
                 <p>Move to:</p>
                 <button>Today</button>
-                <button>Future</button>
             </div>
         </div>
     )
-    const future = futureList.map(task=>
+    const todayOutput = todayList.map(task=>
         <div className={styles.task}>
             <p className={styles.name}>{task.task}</p>
             <div className={styles.options}>
@@ -35,7 +52,7 @@ export default props =>{
                         <h2>Uncompleted Tasks</h2>
                         <p className={styles.description}>You have some outdated uncompleted tasks! What do you want to do with them.</p>
                         <div className={styles.taskWrapper}>
-                            {uncompleted}
+                            {uncompletedOutput}
                         </div>
                         <div className={styles.buttons}>
                             <button onClick={()=>setUncompletedActive(false)}>Next</button>
@@ -45,7 +62,7 @@ export default props =>{
                         <h2>Future</h2>
                         <p className={styles.description}>Tasks planned for the future</p>
                         <div className={styles.taskWrapper}>
-                            {future}
+                            {futureOutput}
                         </div>
                         <div className={styles.buttons}>
                             <button onClick={()=>setUncompletedActive(true)}>Back</button>
@@ -54,9 +71,9 @@ export default props =>{
                 </div>
                 <div className={styles.today}>
                     <h2>Today</h2>
-                    { today.length === 0 
+                    { todayList.length === 0 
                         ? <p>Not any tasks set for today yet!</p> 
-                        : <p>Have tasks</p>
+                        : todayOutput
                     }
                     <button>IM DONE</button>
                 </div>
