@@ -1,4 +1,11 @@
+.Delete{
+    cursor: pointer;
+}
 .Delete path{
     fill: var(--button-color);
     opacity: .3;
+}
+
+.Delete:hover path{
+    opacity: 1;
 }
