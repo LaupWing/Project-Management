@@ -2,12 +2,14 @@ import React, {useState} from 'react'
 import styles from './Moving.module.css'
 import {getFutureTasks, getOutDatedTasks} from '../../../../../../../../utils/taskFilters'
 import Delete from '../../../../../../../../components/UI/Delete/Delete'
+import DatePicker from '../../../../../../../../components/UI/DatePicker/DatePicker'
 
 export default props =>{
     const [uncompletedActive, setUncompletedActive] = useState(true)
     const [uncompletedList, setUncompletedList] = useState(props.tasks ? getOutDatedTasks(props.tasks) : [])
     const [futureList, setFutureList] = useState(props.tasks ? getFutureTasks(props.tasks):[])
     const [todayList, setToday] = useState([])
+    const [datePicker, setDatePicker] = useState(false)
 
     const uncompletedOutput = uncompletedList.map(task=>
         <div className={styles.task}>
