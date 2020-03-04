@@ -9,7 +9,6 @@ export default props =>{
     const [uncompletedList, setUncompletedList] = useState(props.tasks ? getOutDatedTasks(props.tasks) : [])
     const [futureList, setFutureList] = useState(props.tasks ? getFutureTasks(props.tasks):[])
     const [todayList, setToday] = useState([])
-    const [datePicker, setDatePicker] = useState(false)
 
     const uncompletedOutput = uncompletedList.map(task=>
         <div className={styles.task}>
