@@ -2,13 +2,14 @@ import React, {useState} from 'react'
 import styles from './Moving.module.css'
 import {getFutureTasks, getOutDatedTasks} from '../../../../../../../../utils/taskFilters'
 import Delete from '../../../../../../../../components/UI/Delete/Delete'
-import DatePicker from '../../../../../../../../components/UI/DatePicker/DatePicker'
+import Modal from '../../../../../../../../components/UI/Modal/Modal'
 
 export default props =>{
     const [uncompletedActive, setUncompletedActive] = useState(true)
     const [uncompletedList, setUncompletedList] = useState(props.tasks ? getOutDatedTasks(props.tasks) : [])
     const [futureList, setFutureList] = useState(props.tasks ? getFutureTasks(props.tasks):[])
     const [todayList, setToday] = useState([])
+    const [warning, setWarning] = useState(false)
 
     const uncompletedOutput = uncompletedList.map(task=>
         <div className={styles.task}>
@@ -53,8 +54,25 @@ export default props =>{
             </div>
         </div>
     )
+    const done = ()=>{
+        if(uncompletedList.length>0){
+            setWarning('You still have uncompleted tasks! What do you want to do with them (either move it to the future or just delete)')
+            return 
+        }
+        props.done(todayList)
+    }
     return (
         <div className={styles.Moving}>
+            <Modal
+                show={warning}
+                modalClose={()=>setWarning(false)}
+                extraStyles={{
+                    width: `80%`,
+                    color: 'black'
+                }}
+            >
+                {warning ? warning : ''}
+            </Modal>
             <div className={styles.container}>
                 <div className={styles.choices}>
                     <div className={[styles.uncompleted, uncompletedActive ? styles.active : ''].join(' ')}>
@@ -84,7 +102,7 @@ export default props =>{
                         ? <p>Not any tasks set for today yet!</p> 
                         : todayOutput
                     }
-                    <button onClick={()=>props.done(todayList)} className={styles.done}>IM DONE</button>
+                    <button onClick={done} className={styles.done}>IM DONE</button>
                 </div>
             </div>
         </div>

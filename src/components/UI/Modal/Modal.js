@@ -9,7 +9,8 @@ export default (props)=>(
             className={styles['Modal']}
             style={{
                 transform: props.show ? 'translateY(0)' : 'translateY(-70vh)',
-                opacity: props.show ? '1' : '0'
+                opacity: props.show ? '1' : '0',
+                ...props.extraStyles
             }} 
         >
             {props.children}
