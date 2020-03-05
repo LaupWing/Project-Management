@@ -44,6 +44,16 @@ export default connect(mapStateToProps)(props =>{
                     </li>
                 </NavLink>
 
+                <NavLink 
+                    className={styles.link}
+                    exact 
+                    to={`/projects/${props.match.params.id}/future`}
+                    activeClassName={styles.active}    
+                >
+                    <li>
+                        Future
+                    </li>
+                </NavLink>
                 <NavLink
                     className={styles.link} 
                     exact 
@@ -61,7 +71,7 @@ export default connect(mapStateToProps)(props =>{
                     activeClassName={styles.active}
                 >
                     <li>
-                            Skills
+                        Skills
                     </li>
                 </NavLink>
                 <NavLink 
@@ -71,7 +81,7 @@ export default connect(mapStateToProps)(props =>{
                     activeClassName={styles.active}    
                 >
                     <li>
-                            Settings
+                        Settings
                     </li>
                 </NavLink>
             </nav>
