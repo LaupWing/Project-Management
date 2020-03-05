@@ -84,7 +84,7 @@ export default props =>{
                         ? <p>Not any tasks set for today yet!</p> 
                         : todayOutput
                     }
-                    <button className={styles.done}>IM DONE</button>
+                    <button onClick={()=>props.done(todayList)} className={styles.done}>IM DONE</button>
                 </div>
             </div>
         </div>
