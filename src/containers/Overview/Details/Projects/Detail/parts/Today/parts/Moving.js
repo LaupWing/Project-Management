@@ -3,10 +3,20 @@ import styles from './Moving.module.css'
 import {getFutureTasks, getOutDatedTasks} from '../../../../../../../../utils/taskFilters'
 import Delete from '../../../../../../../../components/UI/Delete/Delete'
 import Modal from '../../../../../../../../components/UI/Modal/Modal'
+import {connect} from 'react-redux'
+import * as actions from '../../../../../../../../store/actions/index'
 
-export default props =>{
+const mapDispatchToProps = (dispatch)=>{
+    return {
+        updateProjects: (changes) => dispatch(actions.updateUserProjects(changes)),
+    }
+}
+
+export default connect(null, mapDispatchToProps)(props =>{
     const [uncompletedActive, setUncompletedActive] = useState(true)
-    const [uncompletedList, setUncompletedList] = useState(props.tasks ? getOutDatedTasks(props.tasks) : [])
+    const [uncompletedList, setUncompletedList] = useState(props.tasks 
+        ? getOutDatedTasks(props.tasks) 
+        : [])
     const [futureList, setFutureList] = useState(props.tasks ? getFutureTasks(props.tasks):[])
     const [todayList, setToday] = useState([])
     const [warning, setWarning] = useState(false)
@@ -107,4 +117,4 @@ export default props =>{
             </div>
         </div>
     )
-}
+})
