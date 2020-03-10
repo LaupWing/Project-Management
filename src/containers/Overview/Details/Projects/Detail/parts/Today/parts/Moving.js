@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import styles from './Moving.module.css'
 import {getFutureTasks, getOutDatedTasks} from '../../../../../../../../utils/taskFilters'
 import Delete from '../../../../../../../../components/UI/Delete/Delete'
@@ -29,7 +29,9 @@ export default connect(null, mapDispatchToProps)(props =>{
         
         props.updateProject(id,updatedProject)
     }
-    
+    useEffect(()=>{
+        console.log(props.tasks)
+    },[props.tasks])
 
     const uncompletedOutput = uncompletedList.map(task=>
         <div className={styles.task}>
