@@ -42,7 +42,7 @@ const initialState ={
                 },
                 {
                     date:'Thu Mar 27 2020 16:08:00 GMT+0100 (Midden-Europese standaardtijd)',
-                    task:'Test Test3',
+                    task:'Test Test t3',
                     completed: false
                 },
             ]

@@ -30,8 +30,19 @@ export default connect(null, mapDispatchToProps)(props =>{
         props.updateProject(id,updatedProject)
     }
     useEffect(()=>{
-        console.log(props.tasks)
-    },[props.tasks])
+        if(todayList.length>0){
+            const filteredOut = props.tasks.filter(t=>{
+                if(!todayList.find(t2=>t2.task === t.task)){
+                    return t
+                }
+            })
+            setUncompletedList(getOutDatedTasks(filteredOut))
+            setFutureList(getFutureTasks(filteredOut))
+            return
+        }
+        setUncompletedList(getOutDatedTasks(props.tasks))
+        setFutureList(getFutureTasks(props.tasks))
+    },[props.tasks, todayList])
 
     const uncompletedOutput = uncompletedList.map(task=>
         <div className={styles.task}>
