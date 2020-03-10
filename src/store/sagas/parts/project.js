@@ -27,11 +27,13 @@ export function* fetchingUserProjects(action){
 export function* updateUserProjects(action){
     const {projects} = store.getState()
     const {changes} = action
+    console.log(changes)
     const updatedProjects = projects.map(p=>{
         if(p===changes){
             return changes
         }
         return p
     }) 
+    console.log(updatedProjects)
     yield put(actions.setUserProjects(updatedProjects))
 }

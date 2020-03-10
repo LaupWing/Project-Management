@@ -8,7 +8,7 @@ import * as actions from '../../../../../../../../store/actions/index'
 
 const mapDispatchToProps = (dispatch)=>{
     return {
-        updateProjects: (changes) => dispatch(actions.updateUserProjects(changes)),
+        updateProject: (id, changes) => dispatch(actions.updateUserProjects(id,changes)),
     }
 }
 
@@ -21,9 +21,13 @@ export default connect(null, mapDispatchToProps)(props =>{
     const [todayList, setToday] = useState([])
     const [warning, setWarning] = useState(false)
 
-    const deleteTask = (task)=>[
-        console.log(task)
-    ]
+    const deleteTask = (task)=>{
+        const updatedProject = {...props.project}
+        updatedProject.tasks = props.project.tasks.filter(t=>t!==task) 
+        
+        props.updateProject(null,updatedProject)
+    }
+    
 
     const uncompletedOutput = uncompletedList.map(task=>
         <div className={styles.task}>
