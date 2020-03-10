@@ -22,7 +22,7 @@ export default connect(null, mapDispatchToProps)(props =>{
     const [warning, setWarning] = useState(false)
 
     const deleteTask = (task)=>[
-        
+        console.log(task)
     ]
 
     const uncompletedOutput = uncompletedList.map(task=>
@@ -40,7 +40,7 @@ export default connect(null, mapDispatchToProps)(props =>{
                     setUncompletedList(filteredOut)
                     setFutureList([...futureList, task])
                 }}>Future</button>
-                <Delete/>
+                <Delete clicked={()=>deleteTask(task)}/>
             </div>
         </div>
     )
@@ -54,7 +54,7 @@ export default connect(null, mapDispatchToProps)(props =>{
                     setFutureList(filteredOut)
                     setToday([...todayList, task])
                 }}>Today</button>
-                <Delete/>
+                <Delete clicked={()=>deleteTask(task)}/>
             </div>
         </div>
     )
@@ -65,7 +65,7 @@ export default connect(null, mapDispatchToProps)(props =>{
             <div className={styles.options}>
                 <p>Move to:</p>
                 <button>Today</button>
-                <Delete/>
+                <Delete clicked={()=>deleteTask(task)}/>
             </div>
         </div>
     )
