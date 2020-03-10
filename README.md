@@ -6,9 +6,10 @@ Inspiration: [https://dribbble.com/shots/6816310--Exploration-Dashboard-for-Task
 **_Disclaimer: I used the ui of this creator so all the credits to him, im not intending to make money of this project_**
 
 ## To Do's
-- [ ] Add functional for moving tasks to future or today
-- [ ] Add future part
-- [ ] Add future move to today
+- [ ] Need to use `useEffect` to change the data for the moving component
+- [x] Add functional for moving tasks to future or today
+- [x] Add future part
+- [x] Add future move to today
 - [x] Need to make a seperate Error Object
     -   [x] Create Error Reducer
     -   [x] Handle error via Error Object
