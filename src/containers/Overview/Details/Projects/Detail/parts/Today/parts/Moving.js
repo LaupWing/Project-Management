@@ -31,6 +31,7 @@ export default connect(null, mapDispatchToProps)(props =>{
     }
     useEffect(()=>{
         if(todayList.length>0){
+            // eslint-disable-next-line
             const filteredOut = props.tasks.filter(t=>{
                 if(!todayList.find(t2=>t2.task === t.task)){
                     return t
