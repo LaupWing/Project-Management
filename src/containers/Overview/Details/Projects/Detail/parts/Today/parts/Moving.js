@@ -5,6 +5,7 @@ import Delete from '../../../../../../../../components/UI/Delete/Delete'
 import Modal from '../../../../../../../../components/UI/Modal/Modal'
 import {connect} from 'react-redux'
 import * as actions from '../../../../../../../../store/actions/index'
+import firebase from 'firebase'
 
 const mapDispatchToProps = (dispatch)=>{
     return {
@@ -24,8 +25,9 @@ export default connect(null, mapDispatchToProps)(props =>{
     const deleteTask = (task)=>{
         const updatedProject = {...props.project}
         updatedProject.tasks = props.project.tasks.filter(t=>t!==task) 
+        const id             = firebase.auth().currentUser.uid
         
-        props.updateProject(null,updatedProject)
+        props.updateProject(id,updatedProject)
     }
     
 

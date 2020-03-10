@@ -29,7 +29,7 @@ export function* updateUserProjects(action){
     const {changes} = action
     console.log(changes)
     const updatedProjects = projects.map(p=>{
-        if(p===changes){
+        if(p.name===changes.name){
             return changes
         }
         return p
