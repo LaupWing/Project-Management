@@ -104,7 +104,13 @@ export default connect(mapStateToProps, mapDispatchToProps)(props =>{
     return(
         <React.Fragment>
             <div className={styles.today}>
-                {(unCompletedTasks&& getTodayTasks(props.project.tasks).length===0) && <Moving done={doneAdding} tasks={props.project.tasks.filter(p=>!p.completed)}/>}
+                {(unCompletedTasks && getTodayTasks(props.project.tasks).length===0) && 
+                    <Moving 
+                        done={doneAdding} 
+                        tasks={props.project.tasks.filter(p=>!p.completed)}
+                        project={props.project}
+                    />
+                }
                 <div className={styles.info}>
                     <h3>Today</h3>
                     <More active={props.popup ? 'active' : ''} clicked={openPopup}/>

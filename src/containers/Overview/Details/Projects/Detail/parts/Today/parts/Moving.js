@@ -21,6 +21,10 @@ export default connect(null, mapDispatchToProps)(props =>{
     const [todayList, setToday] = useState([])
     const [warning, setWarning] = useState(false)
 
+    const deleteTask = (task)=>[
+        
+    ]
+
     const uncompletedOutput = uncompletedList.map(task=>
         <div className={styles.task}>
             <p className={styles.name}>{task.task}</p>
@@ -54,6 +58,7 @@ export default connect(null, mapDispatchToProps)(props =>{
             </div>
         </div>
     )
+    
     const todayOutput = todayList.map(task=>
         <div className={styles.todayTask}>
             <p>{task.task}</p>
