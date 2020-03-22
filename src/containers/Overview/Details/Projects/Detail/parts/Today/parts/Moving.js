@@ -89,8 +89,10 @@ export default connect(null, mapDispatchToProps)(props =>{
                 <p>Move to:</p>
                 <button>Today</button>
                 <Delete clicked={()=>{
-                    setToday(todayList.filter(t=>t!==task))
                     deleteTask(task)
+                    setTimeout(() => {
+                        setToday(todayList.filter(t=>t!==task))
+                    });
                 }}/>
             </div>
         </div>
