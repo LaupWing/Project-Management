@@ -45,8 +45,11 @@ export default connect(null, mapDispatchToProps)(props =>{
         setFutureList(getFutureTasks(props.tasks))
     },[props.tasks, todayList])
 
-    const uncompletedOutput = uncompletedList.map(task=>
-        <div className={styles.task}>
+    const uncompletedOutput = uncompletedList.map((task, i)=>
+        <div 
+            className={styles.task}
+            key={i}
+        >
             <p className={styles.name}>{task.task}</p>
             <div className={styles.options}>
                 <p>Move to:</p>
