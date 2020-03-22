@@ -26,7 +26,7 @@ export default connect(null, mapDispatchToProps)(props =>{
         const updatedProject = {...props.project}
         updatedProject.tasks = props.project.tasks.filter(t=>t!==task) 
         const id             = firebase.auth().currentUser.uid
-        
+
         props.updateProject(id,updatedProject)
     }
     useEffect(()=>{
@@ -67,8 +67,8 @@ export default connect(null, mapDispatchToProps)(props =>{
             </div>
         </div>
     )
-    const futureOutput = futureList.map(task=>
-        <div className={styles.task}>
+    const futureOutput = futureList.map((task, i)=>
+        <div className={styles.task} key={i}>
             <p className={styles.name}>{task.task}</p>
             <div className={styles.options}>
                 <p>Move to:</p>
@@ -88,7 +88,10 @@ export default connect(null, mapDispatchToProps)(props =>{
             <div className={styles.options}>
                 <p>Move to:</p>
                 <button>Today</button>
-                <Delete clicked={()=>deleteTask(task)}/>
+                <Delete clicked={()=>{
+                    setToday(todayList.filter(t=>t!==task))
+                    deleteTask(task)
+                }}/>
             </div>
         </div>
     )
