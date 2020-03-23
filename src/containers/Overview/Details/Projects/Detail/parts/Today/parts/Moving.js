@@ -94,9 +94,6 @@ export default connect(null, mapDispatchToProps)(props =>{
                     const todayFiltered = todayList.filter(t=>t!==task)
                     setToday(todayFiltered)
                     setFutureList([...futureList, task])
-                    // setToday(todayList.filter(t=>t!==task))
-                    // const filteredOut = uncompletedList.filter(x=>x!==task)
-                    // setUncompletedList(filteredOut)
                 }}>Future</button>
                 <Delete clicked={()=>{
                     deleteTask(task)

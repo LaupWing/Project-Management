@@ -6,7 +6,8 @@ Inspiration: [https://dribbble.com/shots/6816310--Exploration-Dashboard-for-Task
 **_Disclaimer: I used the ui of this creator so all the credits to him, im not intending to make money of this project_**
 
 ## To Do's
-- [ ] Need to use `useEffect` to change the data for the moving component
+- [ ] Refactor some code to use 'future' tag in data instead of planning for the future
+- [x] Need to use `useEffect` to change the data for the moving component
 - [x] Add functional for moving tasks to future or today
 - [x] Add future part
 - [x] Add future move to today
