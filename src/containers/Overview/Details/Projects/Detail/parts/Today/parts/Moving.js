@@ -15,6 +15,7 @@ const mapDispatchToProps = (dispatch)=>{
 
 export default connect(null, mapDispatchToProps)(props =>{
     const [uncompletedActive, setUncompletedActive] = useState(true)
+    const [init, setInit] = useState(true)
     const [uncompletedList, setUncompletedList] = useState(props.tasks 
         ? getOutDatedTasks(props.tasks) 
         : [])
@@ -30,6 +31,8 @@ export default connect(null, mapDispatchToProps)(props =>{
         props.updateProject(id,updatedProject)
     }
     useEffect(()=>{
+        if(!init)   return
+        setInit(false)
         if(todayList.length>0){
             // eslint-disable-next-line
             const filteredOut = props.tasks.filter(t=>{
@@ -43,7 +46,7 @@ export default connect(null, mapDispatchToProps)(props =>{
         }
         setUncompletedList(getOutDatedTasks(props.tasks))
         setFutureList(getFutureTasks(props.tasks))
-    },[props.tasks, todayList])
+    },[props.tasks, todayList, init])
 
     const uncompletedOutput = uncompletedList.map((task, i)=>
         <div 
@@ -82,12 +85,19 @@ export default connect(null, mapDispatchToProps)(props =>{
         </div>
     )
     
-    const todayOutput = todayList.map(task=>
-        <div className={styles.todayTask}>
+    const todayOutput = todayList.map((task, i)=>
+        <div className={styles.todayTask} key={i}>
             <p>{task.task}</p>
             <div className={styles.options}>
                 <p>Move to:</p>
-                <button>Today</button>
+                <button onClick={()=>{
+                    const todayFiltered = todayList.filter(t=>t!==task)
+                    setToday(todayFiltered)
+                    setFutureList([...futureList, task])
+                    // setToday(todayList.filter(t=>t!==task))
+                    // const filteredOut = uncompletedList.filter(x=>x!==task)
+                    // setUncompletedList(filteredOut)
+                }}>Future</button>
                 <Delete clicked={()=>{
                     deleteTask(task)
                     setTimeout(() => {
